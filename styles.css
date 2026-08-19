@@ -1,0 +1,527 @@
+/* Trabbit marketing site — shared design system.
+   Palette/type extend the app's own identity (lib/theme.ts: accent #20ADC5,
+   Fraunces for the one serif moment in-app) rather than inventing a
+   separate brand — a visitor should recognize the app in the site. */
+
+/* Fraunces + Manrope are loaded via Google Fonts <link> tags in each page's
+   <head> (not inlined here) — see the font stacks below for fallbacks. */
+
+:root {
+  --bg: #fbfaf8;
+  --bg-raised: #f3f1ec;
+  --ink: #1c1b18;
+  --ink-soft: #55524a;
+  --ink-faint: #8c887d;
+  --accent: #1c93a8;
+  --accent-ink: #ffffff;
+  --accent-soft: #e3f4f7;
+  --border: #e6e2d8;
+  --border-strong: #d8d2c3;
+  --card-shadow: 0 1px 2px rgba(28, 27, 24, 0.04), 0 8px 24px rgba(28, 27, 24, 0.05);
+
+  --amber: #b45309;
+  --amber-soft: #fef3c7;
+  --coral: #dc2626;
+  --coral-soft: #fee2e2;
+  --indigo: #4f46e5;
+  --indigo-soft: #e0e7ff;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  --max-width: 1080px;
+  --font-display: 'Fraunces', Georgia, 'Iowan Old Style', serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #17181a;
+    --bg-raised: #1f2023;
+    --ink: #eeece6;
+    --ink-soft: #b6b2a6;
+    --ink-faint: #7a7669;
+    --accent: #4fc3de;
+    --accent-ink: #0b1a1d;
+    --accent-soft: #123138;
+    --border: #33353a;
+    --border-strong: #43454b;
+    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.28);
+    --amber: #f2b148;
+    --amber-soft: #3a2c10;
+    --coral: #f27272;
+    --coral-soft: #3a1616;
+    --indigo: #9490f0;
+    --indigo-soft: #211f3d;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #17181a;
+  --bg-raised: #1f2023;
+  --ink: #eeece6;
+  --ink-soft: #b6b2a6;
+  --ink-faint: #7a7669;
+  --accent: #4fc3de;
+  --accent-ink: #0b1a1d;
+  --accent-soft: #123138;
+  --border: #33353a;
+  --border-strong: #43454b;
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.28);
+  --amber: #f2b148;
+  --amber-soft: #3a2c10;
+  --coral: #f27272;
+  --coral-soft: #3a1616;
+  --indigo: #9490f0;
+  --indigo-soft: #211f3d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Nav ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
+.nav-cta {
+  background: var(--accent);
+  color: var(--accent-ink) !important;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-full);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn-secondary {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--ink);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 5rem 0 4rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.3rem;
+  max-width: 16ch;
+  text-wrap: balance;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 0 0 2.2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.hero-note {
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+
+/* ---------- Sections / cards ---------- */
+
+section {
+  padding: 3.5rem 0;
+}
+
+.section-head {
+  max-width: 42ch;
+  margin-bottom: 2.5rem;
+}
+
+.section-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6rem;
+  text-wrap: balance;
+}
+
+.section-body {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 860px) {
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  box-shadow: var(--card-shadow);
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+}
+
+.card-body {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.tint-accent {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.tint-amber {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+.tint-coral {
+  background: var(--coral-soft);
+  color: var(--coral);
+}
+.tint-indigo {
+  background: var(--indigo-soft);
+  color: var(--indigo);
+}
+
+/* ---------- CTA band ---------- */
+
+.cta-band {
+  background: var(--bg-raised);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  margin: 1rem 0 3rem;
+}
+
+.cta-band .section-title {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-band .hero-actions {
+  justify-content: center;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 0;
+  margin-top: 2rem;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--ink);
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+
+/* ---------- Legal / doc pages ---------- */
+
+.doc {
+  padding: 3rem 0 5rem;
+}
+
+.doc-header h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.doc-updated {
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+  margin-bottom: 2.5rem;
+}
+
+.doc-body {
+  max-width: 70ch;
+}
+
+.doc-body h2 {
+  font-size: 1.15rem;
+  margin: 2.2rem 0 0.7rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.doc-body h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.doc-body p,
+.doc-body li {
+  font-size: 0.96rem;
+  color: var(--ink-soft);
+}
+
+.doc-body strong {
+  color: var(--ink);
+}
+
+.doc-body ul {
+  padding-left: 1.3rem;
+}
+
+.doc-body li {
+  margin-bottom: 0.4rem;
+}
+
+.doc-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin: 0.8rem 0 1.5rem;
+}
+
+.doc-body th,
+.doc-body td {
+  text-align: left;
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.doc-body th {
+  color: var(--ink-faint);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.scroll-x {
+  overflow-x: auto;
+}
+
+/* ---------- FAQ ---------- */
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.4rem 0;
+}
+
+.faq-item h3 {
+  font-size: 1.02rem;
+  margin: 0 0 0.5rem;
+}
+
+.faq-item p {
+  color: var(--ink-soft);
+  margin: 0;
+  font-size: 0.96rem;
+}
+
+/* ---------- Responsive nav ---------- */
+
+@media (max-width: 640px) {
+  /* Keep the primary CTA reachable from the sticky nav on mobile — only the
+     secondary text links (Features/FAQ/Support) drop, not the whole group,
+     so there's still a way to get the app without scrolling. */
+  .nav-links a:not(.nav-cta) {
+    display: none;
+  }
+  .nav-links {
+    gap: 0;
+  }
+  .hero {
+    padding: 3rem 0 2.5rem;
+  }
+  .cta-band {
+    padding: 2.2rem 1.4rem;
+  }
+}

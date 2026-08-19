@@ -3,158 +3,135 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trabbit Privacy Notice</title>
-<style>
-  :root {
-    --bg: #fbfaf8;
-    --ink: #1c1b18;
-    --ink-soft: #55524a;
-    --accent: #1f9fb8;
-    --border: #e6e2d8;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #17181a; --ink: #eeece6; --ink-soft: #a3a099; --accent: #4fc3de; --border: #33353a; }
-  }
-  :root[data-theme="dark"] { --bg: #17181a; --ink: #eeece6; --ink-soft: #a3a099; --accent: #4fc3de; --border: #33353a; }
-  :root[data-theme="light"] { --bg: #fbfaf8; --ink: #1c1b18; --ink-soft: #55524a; --accent: #1f9fb8; --border: #e6e2d8; }
-
-  * { box-sizing: border-box; }
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 3rem 1.25rem 6rem;
-    line-height: 1.65;
-  }
-  .page { max-width: 680px; margin: 0 auto; }
-  h1 { font-size: 1.65rem; letter-spacing: -0.01em; margin-bottom: 0.3rem; }
-  .updated { color: var(--ink-soft); font-size: 0.85rem; margin-bottom: 2.5rem; }
-  h2 { font-size: 1.1rem; margin: 2.2rem 0 0.7rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
-  h2:first-of-type { border-top: none; padding-top: 0; }
-  h3 { font-size: 0.95rem; margin: 1.3rem 0 0.4rem; }
-  p, li { font-size: 0.92rem; }
-  ul { padding-left: 1.3rem; }
-  li { margin-bottom: 0.35rem; }
-  a { color: var(--accent); }
-  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 0.8rem 0 1.5rem; }
-  th, td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { color: var(--ink-soft); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; }
-  .toc { font-size: 0.85rem; columns: 2; gap: 1.5rem; margin-bottom: 2rem; }
-  .toc a { display: block; margin-bottom: 0.3rem; text-decoration: none; }
-  code { background: color-mix(in srgb, var(--ink-soft) 12%, transparent); padding: 0.08rem 0.3rem; border-radius: 4px; font-size: 0.85em; }
-  .scroll-x { overflow-x: auto; }
-</style>
+<title>Trabbit — Training Tracker for Athletes</title>
+<meta name="description" content="Habits, training logs, and performance tests in one place — tracked honestly. No fake streaks. Syncs with Apple Health and WHOOP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<div class="page">
-  <h1>Trabbit Privacy Notice</h1>
-  <p class="updated">Last updated 6 August 2026</p>
-
-  <h2 id="intro">Introduction</h2>
-  <p>This privacy notice describes how we collect, use, share and otherwise process your personal data in connection with your use of the Trabbit mobile application (<strong>App</strong>).</p>
-  <p>Trabbit is not intended for children, and we do not knowingly collect data relating to children.</p>
-  <p>Please read the following carefully to understand our practices regarding your personal data and how we treat it.</p>
-
-  <h2 id="who">Who we are</h2>
-  <p>Matthew Bowler is the controller and is responsible for your personal data (<strong>we</strong>, <strong>us</strong>, or <strong>our</strong> in this notice).</p>
-  <p>If you have any questions about this notice or how we handle your data, contact us at <a href="mailto:bowlerm007@gmail.com">bowlerm007@gmail.com</a>.</p>
-  <p>You have the right to make a complaint at any time to the Information Commissioner's Office (ICO), the UK regulator for data protection issues.</p>
-
-  <h2 id="changes">Changes to this notice</h2>
-  <p>We keep this notice under regular review. If we make a material change, we'll show an in-app notice the next time you open Trabbit — this is the one channel guaranteed to reach every user, since push notifications require you to have separately opted in via Settings.</p>
-  <p>It's important the personal data we hold about you is accurate and current — you can update your name, season phase, and other profile details at any time from within the App.</p>
-
-  <h2 id="data-we-collect">The data we collect about you</h2>
-  <p>We collect the following categories of personal data:</p>
-  <ul>
-    <li><strong>Identity Data</strong> — your name and age range, provided during onboarding.</li>
-    <li><strong>Contact Data</strong> — your email address, used for sign-in and account recovery.</li>
-    <li><strong>Account Data</strong> — your Trabbit account credentials, or, if you choose Sign in with Apple or Google, the identity information those providers share with us (typically your name and email).</li>
-    <li><strong>Health Data</strong> — if you link a habit to Apple Health, we read specific metrics (for example step count) from HealthKit to automatically mark that habit complete for the day. This access is <strong>read-only</strong> — Trabbit never writes to or modifies your Apple Health data. You control this per habit, and can revoke access at any time in iOS Settings.</li>
-    <li><strong>Content Data</strong> — the habits, logs, and tests you create, including their names, schedules, categories, colors/icons, and the values or journal entries you record against them.</li>
-    <li><strong>Feedback Data</strong> — any message you submit via the feedback form in Settings.</li>
-    <li><strong>Device and Usage Data</strong> — basic technical information needed to operate the App and diagnose problems, such as your device type and operating system version.</li>
-    <li><strong>Notification Preferences</strong> — whether you've opted in to backlog-alert or evening-reminder push notifications (both default off), and your push token if so.</li>
-  </ul>
-  <p>We do not collect any special category data beyond the Health Data described above, and we do not collect location data, payment/financial data, or data from advertising networks or data brokers — Trabbit has no in-app purchases, no ads, and no location tracking.</p>
-
-  <h2 id="how-collected">How we collect your data</h2>
-  <ul>
-    <li><strong>Registration.</strong> We collect your Identity and Contact Data when you create an account, either directly or via Sign in with Apple/Google.</li>
-    <li><strong>Using the App.</strong> Each time you create or update a habit, log, or test, we collect the Content Data you enter.</li>
-    <li><strong>Apple Health.</strong> If you link a habit to Apple Health and grant permission, we read the relevant Health Data from your device.</li>
-    <li><strong>Feedback.</strong> If you submit the in-app feedback form, we collect your message and associate it with your account so we can act on it — this is a one-way channel; we don't offer in-app live chat or phone support.</li>
-    <li><strong>Notifications.</strong> If you opt in to either reminder toggle in Settings, we collect a device push token to deliver it.</li>
-  </ul>
-
-  <h2 id="how-we-use">How we use your personal data</h2>
-  <p>We only use your personal data when we have a lawful basis to do so:</p>
-  <div class="scroll-x">
-  <table>
-    <tr><th>Purpose</th><th>Data used</th><th>Lawful basis</th></tr>
-    <tr><td>Create and manage your account</td><td>Identity, Contact, Account</td><td>Performance of a contract</td></tr>
-    <tr><td>Operate the App's core features (habits, logs, tests, streaks)</td><td>Content Data</td><td>Performance of a contract</td></tr>
-    <tr><td>Auto-complete Health-linked habits</td><td>Health Data</td><td>Consent (you link each habit individually)</td></tr>
-    <tr><td>Send backlog-alert or evening-reminder push notifications</td><td>Notification Preferences</td><td>Consent (both toggles default off)</td></tr>
-    <tr><td>Respond to feedback or support requests</td><td>Feedback Data, Contact Data</td><td>Legitimate interests (supporting our users)</td></tr>
-    <tr><td>Maintain security and prevent misuse</td><td>Device and Usage Data</td><td>Legitimate interests (keeping the App and its users safe)</td></tr>
-    <tr><td>Comply with legal obligations</td><td>As relevant to the request</td><td>Legal obligation</td></tr>
-  </table>
+<nav class="nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/mark.png" alt="" width="30" height="30">
+      Trabbit
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/support/">Support</a>
+      <a class="nav-cta" href="https://testflight.apple.com/join/PLACEHOLDER">Get Trabbit</a>
+    </div>
   </div>
-  <p>We do not use your data for advertising, do not sell it, and do not make any decisions about you based solely on automated processing.</p>
+</nav>
 
-  <h2 id="disclosures">Who we share your data with</h2>
-  <ul>
-    <li><strong>Supabase</strong> (our backend/database provider), which hosts our database and authentication in the EEA (Ireland). Every table in our database enforces row-level security, so your data is only ever accessible to your own authenticated account, even at the database layer.</li>
-    <li><strong>Apple and Google</strong>, if you choose to sign in with either — they process your sign-in identity data under their own privacy policies.</li>
-    <li><strong>Apple</strong>, as the distributor of the App through the App Store, and for HealthKit access if you enable it.</li>
-    <li>Law enforcement or regulators, where we're legally required to disclose information.</li>
-  </ul>
-  <p>We do not share your data with marketing partners, advertisers, or data brokers — we don't work with any.</p>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Built for athletes, not habit tourists</span>
+      <h1 class="hero-title">No fake streaks. Just real training.</h1>
+      <p class="hero-subtitle">
+        Habits, training logs, and tests — all in one place, built for how athletes actually train.
+        Missed is missed, partial is partial. Trabbit tracks what really happened, not what looks good.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://testflight.apple.com/join/PLACEHOLDER">Join the TestFlight beta</a>
+        <a class="btn btn-secondary" href="#features">See how it works</a>
+      </div>
+      <p class="hero-note">Free to try. iOS, via TestFlight.</p>
+    </div>
+  </section>
 
-  <h2 id="transfers">International transfers</h2>
-  <p>Your data is primarily stored in the EEA (Ireland), via Supabase. Because Trabbit is used from the UK, this involves a transfer of your data outside the UK to the EEA, which is covered by the UK's own adequacy regulations for EEA countries — no additional safeguard is required for this specific transfer.</p>
-  <p>If you sign in with Apple or Google, a limited amount of identity data (name and email) is processed by those companies as part of the sign-in flow, under their own respective privacy policies and transfer safeguards.</p>
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">The system</div>
+        <h2 class="section-title">Four ways to track training, one honest record</h2>
+        <p class="section-body">
+          Trabbit doesn't collapse everything into a single streak number. Each piece of your training
+          gets tracked the way it actually works.
+        </p>
+      </div>
 
-  <h2 id="security">Data security</h2>
-  <ul>
-    <li>Your data is stored on Supabase's infrastructure in the EEA (Ireland), and all connections between the App and our backend use TLS (HTTPS) encryption in transit.</li>
-    <li>Every table in our database has row-level security enabled, restricting access to your own data even if a database credential were compromised — access is enforced at the database layer, not just in the App's own code.</li>
-    <li>A small amount of non-sensitive local state (for example, which sections of a screen you've expanded) is cached on your device; this never includes your account credentials.</li>
-    <li>You're responsible for keeping your device and account credentials secure — don't share your password with anyone.</li>
-  </ul>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon tint-accent">✓</div>
+          <h3 class="card-title">Habits, honestly scheduled</h3>
+          <p class="card-body">
+            Recurring habits that know your season — preseason, in-season, offseason, or rehab. A missed
+            day shows as missed. A partial effort shows as partial. Your streak reflects what happened.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon tint-indigo">✎</div>
+          <h3 class="card-title">Training logs</h3>
+          <p class="card-body">
+            A journal for the sessions that don't reduce to a checkbox — how a lift felt, what you noticed
+            in a run, what to fix next time. Written, not just logged.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon tint-amber">◷</div>
+          <h3 class="card-title">Performance tests</h3>
+          <p class="card-body">
+            Track the numbers that actually matter over a season — 40-yard splits, max lifts, mile times —
+            and watch the trend, not just the last result.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon tint-coral">♥</div>
+          <h3 class="card-title">Apple Health &amp; WHOOP sync</h3>
+          <p class="card-body">
+            Link a habit to steps, recovery, sleep, or strain and let it complete itself from real data —
+            read-only, always. Your wearable does the logging.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon tint-accent">◈</div>
+          <h3 class="card-title">Real streaks, real milestones</h3>
+          <p class="card-body">
+            Streaks are computed from what you actually completed — nothing fudged to keep a number alive.
+            Milestones celebrate the ones that are real.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon tint-indigo">◔</div>
+          <h3 class="card-title">Progress you can see</h3>
+          <p class="card-body">
+            Plot any habit, test, or synced metric against any other and watch how they move together over
+            a week, a month, or a season.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2 id="retention">Data retention</h2>
-  <p>We retain your account data for as long as you have an active account.</p>
-  <p>You can delete your account and all associated data at any time from within the App, in Settings — this is immediate and permanent.</p>
+  <section>
+    <div class="wrap">
+      <div class="cta-band">
+        <h2 class="section-title">Train like it counts.</h2>
+        <p class="section-body" style="margin: 0 auto 1.8rem; max-width: 40ch;">
+          Trabbit is in TestFlight now. Join the beta and start tracking your training honestly.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://testflight.apple.com/join/PLACEHOLDER">Join the TestFlight beta</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-  <h2 id="rights">Your legal rights</h2>
-  <p>Under UK data protection law, you have the right to:</p>
-  <ul>
-    <li><strong>Access</strong> a copy of the personal data we hold about you.</li>
-    <li><strong>Correct</strong> inaccurate or incomplete data — you can update most of this yourself in the App.</li>
-    <li><strong>Delete</strong> your data — available immediately and directly in Settings, or by contacting us.</li>
-    <li><strong>Object</strong> to processing based on legitimate interests.</li>
-    <li><strong>Restrict</strong> our processing of your data in certain circumstances.</li>
-    <li><strong>Port</strong> your data to another service, where technically feasible.</li>
-    <li><strong>Withdraw consent</strong> at any time for anything we process on that basis (Health Data access, push notifications) — directly in the App or in iOS Settings.</li>
-  </ul>
-  <p>To exercise any of these rights, contact us at <a href="mailto:bowlerm007@gmail.com">bowlerm007@gmail.com</a>. You can also complain directly to the ICO at any time.</p>
-
-  <h2 id="categories">Description of data categories</h2>
-  <ul>
-    <li><strong>Identity Data:</strong> name, age range.</li>
-    <li><strong>Contact Data:</strong> email address.</li>
-    <li><strong>Account Data:</strong> your Trabbit credentials, or Apple/Google sign-in identity data.</li>
-    <li><strong>Health Data:</strong> the specific Apple Health metrics you've linked to a habit (read-only).</li>
-    <li><strong>Content Data:</strong> habit, log, and test names, schedules, categories, and the values/entries you record.</li>
-    <li><strong>Feedback Data:</strong> the text of any feedback you submit.</li>
-    <li><strong>Device and Usage Data:</strong> device type, OS version, and basic diagnostic information.</li>
-    <li><strong>Notification Preferences:</strong> your reminder toggle settings and device push token, if enabled.</li>
-  </ul>
-
-  <p class="updated" style="margin-top:3rem">Trabbit is a trading name of Matthew Bowler. Copyright Matthew Bowler 2026.</p>
-</div>
+<footer>
+  <div class="wrap footer-row">
+    <span class="footer-copy">© 2026 Matthew Bowler. Trabbit is a trading name of Matthew Bowler.</span>
+    <div class="footer-links">
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/support/">Support</a>
+      <a href="/faq/">FAQ</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
