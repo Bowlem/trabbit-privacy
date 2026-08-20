@@ -173,6 +173,55 @@ a {
 
 /* ---------- Buttons ---------- */
 
+/* ---------- Waitlist ---------- */
+
+.waitlist-form {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.waitlist-input {
+  flex: 1 1 16rem;
+  min-width: 0;
+  padding: 0.85rem 1.3rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-raised);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.waitlist-input::placeholder {
+  color: var(--ink-faint);
+}
+
+.waitlist-input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.waitlist-status {
+  margin: 0.7rem 0 0;
+  font-size: 0.85rem;
+  color: var(--coral);
+  min-height: 1.2em;
+}
+
+.waitlist-success {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.cta-band .waitlist-form,
+.cta-band .waitlist-success {
+  justify-content: center;
+  text-align: center;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -185,6 +234,11 @@ a {
   text-decoration: none;
   border: 1px solid transparent;
   cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
 
 .btn-primary {

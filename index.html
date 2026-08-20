@@ -21,13 +21,13 @@
       <a href="#features">Features</a>
       <a href="/faq/">FAQ</a>
       <a href="/support/">Support</a>
-      <a class="nav-cta" href="https://testflight.apple.com/join/PLACEHOLDER">Get Trabbit</a>
+      <a class="nav-cta" href="/#waitlist">Join Waitlist</a>
     </div>
   </div>
 </nav>
 
 <main>
-  <section class="hero">
+  <section class="hero" id="waitlist">
     <div class="wrap">
       <span class="eyebrow">Built for athletes, not habit tourists</span>
       <h1 class="hero-title">No fake streaks. Just real training.</h1>
@@ -35,11 +35,13 @@
         Habits, training logs, and tests — all in one place, built for how athletes actually train.
         Missed is missed, partial is partial. Trabbit tracks what really happened, not what looks good.
       </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://testflight.apple.com/join/PLACEHOLDER">Join the TestFlight beta</a>
-        <a class="btn btn-secondary" href="#features">See how it works</a>
-      </div>
-      <p class="hero-note">Free to try. iOS, via TestFlight.</p>
+      <form class="waitlist-form" data-waitlist-form>
+        <input class="waitlist-input" type="email" name="email" placeholder="you@example.com" aria-label="Email address" required>
+        <button class="btn btn-primary" type="submit">Join the waitlist</button>
+      </form>
+      <p class="waitlist-status" data-waitlist-status role="status"></p>
+      <p class="waitlist-success" data-waitlist-success hidden>You're on the list — we'll email you when Trabbit launches.</p>
+      <p class="hero-note">iOS. Launching soon. <a href="#features">See how it works →</a></p>
     </div>
   </section>
 
@@ -112,11 +114,15 @@
       <div class="cta-band">
         <h2 class="section-title">Train like it counts.</h2>
         <p class="section-body" style="margin: 0 auto 1.8rem; max-width: 40ch;">
-          Trabbit is in TestFlight now. Join the beta and start tracking your training honestly.
+          Be the first to know when Trabbit launches. Join the waitlist and start tracking your training
+          honestly.
         </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://testflight.apple.com/join/PLACEHOLDER">Join the TestFlight beta</a>
-        </div>
+        <form class="waitlist-form" style="max-width: 26rem; margin: 0 auto;" data-waitlist-form>
+          <input class="waitlist-input" type="email" name="email" placeholder="you@example.com" aria-label="Email address" required>
+          <button class="btn btn-primary" type="submit">Join the waitlist</button>
+        </form>
+        <p class="waitlist-status" data-waitlist-status role="status"></p>
+        <p class="waitlist-success" data-waitlist-success hidden>You're on the list — we'll email you when Trabbit launches.</p>
       </div>
     </div>
   </section>
@@ -133,5 +139,6 @@
     </div>
   </div>
 </footer>
+<script src="/waitlist.js"></script>
 </body>
 </html>
