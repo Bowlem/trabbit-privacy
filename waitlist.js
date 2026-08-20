@@ -2,7 +2,9 @@
 // the Trabbit app itself uses (see supabase/migrations/
 // 0026_waitlist_signups.sql in the app repo). The anon key is safe to ship
 // client-side; it can only INSERT into waitlist_signups, per that table's
-// row-level security policy.
+// row-level security policy. source_page (which of the 5 pages the visitor
+// signed up from) is captured automatically from the URL — no per-page
+// markup needed since this script is shared across all of them.
 (function () {
   var SUPABASE_URL = 'https://vyaoexlumymzhpbvhiif.supabase.co';
   var SUPABASE_ANON_KEY =
@@ -63,7 +65,11 @@
         Authorization: 'Bearer ' + SUPABASE_ANON_KEY,
         Prefer: 'return=minimal',
       },
-      body: JSON.stringify({ email: email, phone: phone }),
+      body: JSON.stringify({
+        email: email,
+        phone: phone,
+        source_page: window.location.pathname,
+      }),
     })
       .then(function (res) {
         // 201 = new signup, 409 = already on the list (unique email) —
