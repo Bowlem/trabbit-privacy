@@ -21,7 +21,7 @@
       <a href="/#features">Features</a>
       <a href="/faq/">FAQ</a>
       <a href="/support/">Support</a>
-      <a class="nav-cta" href="/#waitlist">Join Waitlist</a>
+      <button class="nav-cta" type="button" data-waitlist-open>Join Waitlist</button>
     </div>
   </div>
 </nav>
@@ -66,5 +66,27 @@
     </div>
   </div>
 </footer>
+<dialog class="waitlist-dialog" data-waitlist-dialog>
+  <div class="waitlist-dialog-head">
+    <h2 class="waitlist-dialog-title">Get notified</h2>
+    <button class="waitlist-dialog-close" type="button" data-waitlist-close aria-label="Close">&times;</button>
+  </div>
+  <p class="waitlist-dialog-body">Leave your email and phone number and we'll let you know the moment the beta's ready to download.</p>
+  <form class="waitlist-form" data-waitlist-form>
+    <div class="waitlist-field">
+      <label class="waitlist-label" for="waitlist-email">Email</label>
+      <input class="waitlist-input" id="waitlist-email" type="email" name="email" placeholder="you@example.com" required>
+    </div>
+    <div class="waitlist-field">
+      <label class="waitlist-label" for="waitlist-phone">Phone number</label>
+      <input class="waitlist-input" id="waitlist-phone" type="tel" name="phone" placeholder="+1 555 123 4567" required>
+    </div>
+    <button class="btn btn-primary" type="submit">Notify me</button>
+  </form>
+  <p class="waitlist-status" data-waitlist-status role="status"></p>
+  <p class="waitlist-success" data-waitlist-success hidden>You're on the list — we'll text and email you when the beta's ready to download.</p>
+</dialog>
+
+<script src="/waitlist.js"></script>
 </body>
 </html>

@@ -169,23 +169,96 @@ a {
   color: var(--accent-ink) !important;
   padding: 0.55rem 1.1rem;
   border-radius: var(--radius-full);
+  border: none;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 /* ---------- Buttons ---------- */
 
 /* ---------- Waitlist ---------- */
 
+.waitlist-dialog {
+  width: min(26rem, calc(100vw - 2.5rem));
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: var(--card-shadow);
+}
+
+.waitlist-dialog::backdrop {
+  background: rgba(20, 18, 14, 0.55);
+}
+
+:root:not([data-theme='light']) .waitlist-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.waitlist-dialog-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.waitlist-dialog-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.waitlist-dialog-close {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  border: none;
+  background: var(--bg-raised);
+  color: var(--ink-soft);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.waitlist-dialog-close:hover {
+  color: var(--ink);
+}
+
+.waitlist-dialog-body {
+  color: var(--ink-soft);
+  margin: 0 0 1.5rem;
+}
+
 .waitlist-form {
   display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.waitlist-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.waitlist-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .waitlist-input {
-  flex: 1 1 16rem;
-  min-width: 0;
-  padding: 0.85rem 1.3rem;
-  border-radius: var(--radius-full);
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--radius-md);
   border: 1px solid var(--border-strong);
   background: var(--bg-raised);
   color: var(--ink);
@@ -202,6 +275,11 @@ a {
   outline-offset: 2px;
 }
 
+.waitlist-form .btn {
+  margin-top: 0.3rem;
+  width: 100%;
+}
+
 .waitlist-status {
   margin: 0.7rem 0 0;
   font-size: 0.85rem;
@@ -214,12 +292,6 @@ a {
   font-size: 1rem;
   font-weight: 600;
   color: var(--accent);
-}
-
-.cta-band .waitlist-form,
-.cta-band .waitlist-success {
-  justify-content: center;
-  text-align: center;
 }
 
 .btn {
