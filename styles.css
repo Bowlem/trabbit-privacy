@@ -8,13 +8,22 @@
    editorial flourish the app itself doesn't need at that scale); everything
    else uses IBM Plex Sans/Mono, the actual faces theme.ts's typography
    scale is built on (eyebrow/label text in Plex Mono, everything else in
-   Plex Sans). */
+   Plex Sans).
+
+   The redesign isn't just a color swap: theme.ts's radius scale is
+   deliberately small now (radius.md is 4px, not a generic 12px) — "the old
+   radius.full pill language (banners, badges, chips) is retired in favor of
+   hairline-bordered rows and small-radius rectangles," per that file's own
+   comment — and no UI component in the app casts a shadow (Card.tsx is a
+   flat colors.surface fill with a hairline border, nothing else). Both of
+   those are followed here too, not just the palette. */
 
 /* Fraunces + IBM Plex are loaded via a Google Fonts <link> tag in each
    page's <head> (not inlined here) — see the font stack below for fallbacks. */
 
 :root {
   --bg: #0b0d10;
+  --surface: #14171b;
   --bg-raised: #1b1f24;
   --ink: #f2f3f5;
   --ink-soft: #8b909a;
@@ -24,7 +33,6 @@
   --accent-soft: rgba(95, 201, 196, 0.14);
   --border: #1e2126;
   --border-strong: #33373d;
-  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.24), 0 8px 24px rgba(0, 0, 0, 0.28);
 
   --amber: #d9b36c;
   --amber-soft: rgba(217, 179, 108, 0.14);
@@ -33,10 +41,13 @@
   --indigo: #9c8cd6;
   --indigo-soft: rgba(156, 140, 214, 0.14);
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  /* theme.ts's actual scale — small and rectangular, not a generic
+     rounded-everything SaaS scale. Kept the same names/count as before so
+     nothing below needed restructuring, just smaller values. */
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
   --radius-full: 999px;
 
   --max-width: 1080px;
@@ -151,9 +162,8 @@ a {
   padding: 2rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-  background: var(--bg-raised);
+  background: var(--surface);
   color: var(--ink);
-  box-shadow: var(--card-shadow);
 }
 
 .waitlist-dialog::backdrop {
@@ -257,10 +267,10 @@ a {
   color: var(--accent);
 }
 
-/* Matches components/ui/Button.tsx exactly — radius.md (12px, not a pill;
-   the app reserves the full-pill shape for banners/tags, not buttons — see
-   .eyebrow/PILL_CONTAINER_STYLE below), min-height 48, spacing.xl (20px)
-   horizontal padding, typography.bodyStrong (15px/600) label. */
+/* Matches components/ui/Button.tsx exactly — radius.md (4px, not a pill;
+   radius.full is reserved for genuinely circular shapes now, like
+   .card-icon above), min-height 48, spacing.xl (20px) horizontal padding,
+   typography.bodyStrong (15px/600) label. */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -298,19 +308,30 @@ a {
   padding: 5rem 0 4rem;
 }
 
+/* Plain small-caps telemetry text, not a filled pill badge — matches
+   theme.ts's typography.eyebrow (Plex Mono, uppercase, letter-spaced),
+   used e.g. for the Today screen's "IN SEASON" label next to its own dot
+   rather than as a chip with a background. */
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--accent);
-  background: var(--accent-soft);
-  padding: 0.4rem 0.85rem;
-  border-radius: var(--radius-full);
   margin-bottom: 1.5rem;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--accent);
+  flex-shrink: 0;
 }
 
 .hero-title {
@@ -396,7 +417,6 @@ section {
   width: 100%;
   border-radius: 2.2rem;
   border: 1px solid var(--border);
-  box-shadow: var(--card-shadow);
 }
 
 .screenshot-caption {
@@ -428,17 +448,19 @@ section {
 }
 
 .card {
-  background: var(--bg-raised);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 1.6rem;
-  box-shadow: var(--card-shadow);
 }
 
+/* Circular, like the category/habit color dots in the app itself (a
+   filled-circle icon chip, not a rounded square) — see the Habits
+   screenshot above. */
 .card-icon {
   width: 44px;
   height: 44px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
