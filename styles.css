@@ -1,35 +1,37 @@
 /* Trabbit marketing site — shared design system.
    Tokens are lib/theme.ts's own values, not an approximation — a visitor
-   should recognize the app in the site. The app is a single deliberate
-   LIGHT theme by design (see theme.ts's own top comment), so this site is
-   light-only too, on purpose, rather than carrying a dark mode the app
-   itself doesn't have. Fraunces is the app's one serif moment (the Today
-   tab's date heading, lib/theme.ts's typography.dateHeading) — used just as
-   sparingly here, on the hero headline only; everything else is the same
-   system-font stack the app uses everywhere else. */
+   should recognize the app in the site. The app's "pro-dark" redesign
+   replaced its old single light theme with a deliberately dark, data-forward
+   instrument look (see theme.ts's own top comment) — this site follows,
+   dark-only on purpose, same as the app has no light mode of its own.
+   Fraunces stays as the site's one serif moment on the hero headline (an
+   editorial flourish the app itself doesn't need at that scale); everything
+   else uses IBM Plex Sans/Mono, the actual faces theme.ts's typography
+   scale is built on (eyebrow/label text in Plex Mono, everything else in
+   Plex Sans). */
 
-/* Fraunces is loaded via a Google Fonts <link> tag in each page's <head>
-   (not inlined here) — see the font stack below for its fallback. */
+/* Fraunces + IBM Plex are loaded via a Google Fonts <link> tag in each
+   page's <head> (not inlined here) — see the font stack below for fallbacks. */
 
 :root {
-  --bg: #ffffff;
-  --bg-raised: #eef2f7;
-  --ink: #0f172a;
-  --ink-soft: #475569;
-  --ink-faint: #94a3b8;
-  --accent: #20adc5;
-  --accent-ink: #ffffff;
-  --accent-soft: #e5f7fb;
-  --border: #e2e8f0;
-  --border-strong: #cbd5e1;
-  --card-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.05);
+  --bg: #0b0d10;
+  --bg-raised: #1b1f24;
+  --ink: #f2f3f5;
+  --ink-soft: #8b909a;
+  --ink-faint: #565b63;
+  --accent: #5fc9c4;
+  --accent-ink: #06201e;
+  --accent-soft: rgba(95, 201, 196, 0.14);
+  --border: #1e2126;
+  --border-strong: #33373d;
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.24), 0 8px 24px rgba(0, 0, 0, 0.28);
 
-  --amber: #b45309;
-  --amber-soft: #fef3c7;
-  --coral: #dc2626;
-  --coral-soft: #fee2e2;
-  --indigo: #4f46e5;
-  --indigo-soft: #e0e7ff;
+  --amber: #d9b36c;
+  --amber-soft: rgba(217, 179, 108, 0.14);
+  --coral: #e0685c;
+  --coral-soft: rgba(224, 104, 92, 0.14);
+  --indigo: #9c8cd6;
+  --indigo-soft: rgba(156, 140, 214, 0.14);
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -39,7 +41,8 @@
 
   --max-width: 1080px;
   --font-display: 'Fraunces', Georgia, 'Iowan Old Style', serif;
-  --font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', 'Roboto Mono', monospace;
 }
 
 * {
@@ -47,7 +50,7 @@
 }
 
 html {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 body {
@@ -148,13 +151,13 @@ a {
   padding: 2rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-  background: var(--bg);
+  background: var(--bg-raised);
   color: var(--ink);
   box-shadow: var(--card-shadow);
 }
 
 .waitlist-dialog::backdrop {
-  background: rgba(15, 23, 42, 0.55);
+  background: rgba(4, 5, 7, 0.86);
 }
 
 .waitlist-dialog-head {
@@ -181,7 +184,7 @@ a {
   justify-content: center;
   border-radius: var(--radius-full);
   border: none;
-  background: var(--bg-raised);
+  background: var(--border-strong);
   color: var(--ink-soft);
   font-size: 1.2rem;
   line-height: 1;
@@ -425,7 +428,7 @@ section {
 }
 
 .card {
-  background: var(--bg);
+  background: var(--bg-raised);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 1.6rem;
