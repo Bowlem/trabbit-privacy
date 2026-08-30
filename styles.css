@@ -4,11 +4,10 @@
    replaced its old single light theme with a deliberately dark, data-forward
    instrument look (see theme.ts's own top comment) — this site follows,
    dark-only on purpose, same as the app has no light mode of its own.
-   Fraunces stays as the site's one serif moment on the hero headline (an
-   editorial flourish the app itself doesn't need at that scale); everything
-   else uses IBM Plex Sans/Mono, the actual faces theme.ts's typography
+   Every face is IBM Plex Sans/Mono, the actual faces theme.ts's typography
    scale is built on (eyebrow/label text in Plex Mono, everything else in
-   Plex Sans).
+   Plex Sans) — no separate display serif on the hero, kept deliberately
+   plain rather than reaching for a display face with its own personality.
 
    The redesign isn't just a color swap: theme.ts's radius scale is
    deliberately small now (radius.md is 4px, not a generic 12px) — "the old
@@ -18,8 +17,8 @@
    flat colors.surface fill with a hairline border, nothing else). Both of
    those are followed here too, not just the palette. */
 
-/* Fraunces + IBM Plex are loaded via a Google Fonts <link> tag in each
-   page's <head> (not inlined here) — see the font stack below for fallbacks. */
+/* IBM Plex is loaded via a Google Fonts <link> tag in each page's <head>
+   (not inlined here) — see the font stack below for fallbacks. */
 
 :root {
   --bg: #0b0d10;
@@ -51,7 +50,6 @@
   --radius-full: 999px;
 
   --max-width: 1080px;
-  --font-display: 'Fraunces', Georgia, 'Iowan Old Style', serif;
   --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'IBM Plex Mono', 'SF Mono', 'Roboto Mono', monospace;
 }
@@ -350,8 +348,8 @@ a {
 }
 
 .hero-title {
-  font-family: var(--font-display);
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-weight: 800;
   font-size: clamp(2.4rem, 5.5vw, 4rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -439,10 +437,56 @@ section {
   width: clamp(220px, 30vw, 320px);
 }
 
-.feature-media img {
+/* A bare rounded-rect screenshot reads as a cropped image floating on the
+   page; a chassis around it — bezel, inset screen, a couple of hardware
+   buttons on the edge — reads as a physical device the screenshot is
+   playing on. Kept restrained (a soft brushed-metal gradient, not chrome
+   or glossy highlights) so it dresses up the presentation without
+   competing with the screenshot itself. */
+.phone-frame {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  border-radius: 2.2rem;
-  border: 1px solid var(--border);
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border-radius: 2.6rem;
+  background: linear-gradient(155deg, #3c414a 0%, #101216 45%, #2a2e35 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    inset 0 0 1px 1px rgba(0, 0, 0, 0.5),
+    0 2rem 4rem -1.5rem rgba(0, 0, 0, 0.6);
+}
+
+.phone-frame img {
+  display: block;
+  width: 100%;
+  border-radius: 2.15rem;
+}
+
+/* Power button (right edge) and volume rocker (left edge) — enough to
+   silhouette a real device without over-detailing it. */
+.phone-frame::before,
+.phone-frame::after {
+  content: '';
+  position: absolute;
+  background: #101216;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.phone-frame::before {
+  right: -3px;
+  top: 21%;
+  width: 3px;
+  height: 9%;
+  border-radius: 0 2px 2px 0;
+}
+
+.phone-frame::after {
+  left: -3px;
+  top: 14%;
+  width: 3px;
+  height: 16%;
+  border-radius: 2px 0 0 2px;
 }
 
 /* A flat, front-on screenshot reads as a static asset dropped onto the page;
@@ -456,31 +500,43 @@ section {
   position: relative;
 }
 
-.tilt-media img {
-  position: relative;
-  z-index: 1;
+.tilt-media .phone-frame {
   transform: rotate(-6deg);
-  box-shadow: 0 2rem 4rem -1.5rem rgba(0, 0, 0, 0.6);
 }
 
 .tilt-media::before {
   content: '';
   position: absolute;
-  inset: 8% 16%;
+  inset: 4% 10%;
   z-index: 0;
-  background: var(--accent-soft);
-  filter: blur(2.75rem);
+  background: color-mix(in srgb, var(--accent) 48%, transparent);
+  filter: blur(2.5rem);
   transform: rotate(-6deg);
 }
 
-.hero-media.tilt-media img,
+.hero-media.tilt-media .phone-frame,
 .hero-media.tilt-media::before {
   transform: rotate(-9deg);
 }
 
-.feature-row.reverse .tilt-media img,
+.feature-row.reverse .tilt-media .phone-frame,
 .feature-row.reverse .tilt-media::before {
   transform: rotate(6deg);
+}
+
+/* Each feature row's glow picks up a different accent from the same
+   palette used for card icons elsewhere on the page, so a screenshot
+   reads as its own moment rather than six identical teal halos in a row —
+   still a light touch (the screenshot itself stays the whole point), just
+   enough color behind the glass to lift it off the black page. */
+.tilt-indigo::before {
+  background: color-mix(in srgb, var(--indigo) 48%, transparent);
+}
+.tilt-coral::before {
+  background: color-mix(in srgb, var(--coral) 48%, transparent);
+}
+.tilt-amber::before {
+  background: color-mix(in srgb, var(--amber) 48%, transparent);
 }
 
 .feature-copy {
