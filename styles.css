@@ -308,6 +308,21 @@ a {
   padding: 5rem 0 4rem;
 }
 
+.hero-row {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.hero-copy {
+  flex: 1 1 420px;
+}
+
+.hero-media {
+  flex: 0 0 auto;
+  width: clamp(200px, 24vw, 280px);
+}
+
 /* Plain small-caps telemetry text, not a filled pill badge — matches
    theme.ts's typography.eyebrow (Plex Mono, uppercase, letter-spaced),
    used e.g. for the Today screen's "IN SEASON" label next to its own dot
@@ -397,34 +412,97 @@ section {
   font-size: 1.05rem;
 }
 
-/* ---------- Screenshots ---------- */
+/* ---------- Feature stories ---------- */
 
-.screenshots {
+/* One big alternating image/copy row per feature, replacing the old small
+   scrolling screenshot carousel — the point is for real app screens to read
+   as the main content of this section, not a supplementary strip. */
+.feature-row {
   display: flex;
-  gap: 1.75rem;
-  overflow-x: auto;
-  padding: 0.5rem 0 1rem;
-  scroll-snap-type: x proximity;
+  align-items: center;
+  gap: 3.5rem;
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
 }
 
-.screenshot {
+.feature-row:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.feature-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-media {
   flex: 0 0 auto;
-  scroll-snap-align: start;
-  width: clamp(200px, 24vw, 250px);
+  width: clamp(220px, 30vw, 320px);
 }
 
-.screenshot img {
+.feature-media img {
   width: 100%;
   border-radius: 2.2rem;
   border: 1px solid var(--border);
 }
 
-.screenshot-caption {
-  margin-top: 0.9rem;
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--ink);
-  text-align: center;
+/* A flat, front-on screenshot reads as a static asset dropped onto the page;
+   a slight tilt plus a soft ambient glow reads as something arranged and
+   alive. This only dresses up the marketing presentation around a
+   screenshot — the screenshot itself, and the site's own flat, shadow-free
+   buttons/cards, are untouched. Rows alternate tilt direction so the page
+   has a visual rhythm as you scroll rather than every phone leaning the
+   same way; reverse rows and the hero lean opposite the default. */
+.tilt-media {
+  position: relative;
+}
+
+.tilt-media img {
+  position: relative;
+  z-index: 1;
+  transform: rotate(-6deg);
+  box-shadow: 0 2rem 4rem -1.5rem rgba(0, 0, 0, 0.6);
+}
+
+.tilt-media::before {
+  content: '';
+  position: absolute;
+  inset: 8% 16%;
+  z-index: 0;
+  background: var(--accent-soft);
+  filter: blur(2.75rem);
+  transform: rotate(-6deg);
+}
+
+.hero-media.tilt-media img,
+.hero-media.tilt-media::before {
+  transform: rotate(-9deg);
+}
+
+.feature-row.reverse .tilt-media img,
+.feature-row.reverse .tilt-media::before {
+  transform: rotate(6deg);
+}
+
+.feature-copy {
+  flex: 1 1 320px;
+}
+
+.feature-title {
+  font-weight: 800;
+  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.7rem;
+}
+
+.feature-body {
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  max-width: 46ch;
+  margin: 0;
+}
+
+.feature-support {
+  margin-top: 1rem;
 }
 
 .grid {
@@ -432,18 +510,44 @@ section {
   gap: 1.25rem;
 }
 
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .grid-2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
 @media (max-width: 860px) {
-  .grid-3,
   .grid-2 {
     grid-template-columns: 1fr;
+  }
+  .hero-row {
+    flex-direction: column-reverse;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .hero-media {
+    width: min(240px, 60vw);
+  }
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .feature-row,
+  .feature-row.reverse {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.25rem 0;
+  }
+  .feature-media {
+    width: min(280px, 68vw);
+    margin: 0 auto;
+  }
+  .feature-copy {
+    text-align: center;
+  }
+  .feature-body {
+    margin: 0 auto;
   }
 }
 
