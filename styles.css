@@ -1,65 +1,81 @@
 /* Trabit marketing site — shared design system.
-   Tokens are lib/theme.ts's own values, not an approximation — a visitor
-   should recognize the app in the site. The app's "pro-dark" redesign
-   replaced its old single light theme with a deliberately dark, data-forward
-   instrument look (see theme.ts's own top comment) — this site follows,
-   dark-only on purpose, same as the app has no light mode of its own.
-   Every face is IBM Plex Sans/Mono, the actual faces theme.ts's typography
-   scale is built on (eyebrow/label text in Plex Mono, everything else in
-   Plex Sans) — no separate display serif on the hero, kept deliberately
-   plain rather than reaching for a display face with its own personality.
+   Tokens are the app's own lib/theme.ts values, so a visitor recognizes the
+   app in the site: a cool-grey page with warm stone-grey cards and the
+   Trabit blue accent in light mode (the app's default), and the near-black
+   instrument palette in dark mode, which follows the visitor's system
+   setting the way the app's own "System" appearance does.
 
-   The redesign isn't just a color swap: theme.ts's radius scale is
-   deliberately small now (radius.md is 4px, not a generic 12px) — "the old
-   radius.full pill language (banners, badges, chips) is retired in favor of
-   hairline-bordered rows and small-radius rectangles," per that file's own
-   comment — and no UI component in the app casts a shadow (Card.tsx is a
-   flat colors.surface fill with a hairline border, nothing else). Both of
-   those are followed here too, not just the palette. */
-
-/* IBM Plex is loaded via a Google Fonts <link> tag in each page's <head>
-   (not inlined here) — see the font stack below for fallbacks. */
+   Shapes follow the app too: one family (Schibsted Grotesk, loaded via a
+   Google Fonts <link> in each page's <head>), pill buttons and chips, and
+   big soft-cornered cards like the grouped category cards on Today. Labels
+   on the blue are navy, not white — white on this blue is only ~2.7:1. */
 
 :root {
-  --bg: #0b0d10;
-  --surface: #14171b;
-  --bg-raised: #1b1f24;
-  --ink: #f2f3f5;
-  --ink-soft: #8b909a;
-  --ink-faint: #565b63;
-  --accent: #5fc9c4;
-  --accent-ink: #06201e;
-  --accent-soft: rgba(95, 201, 196, 0.14);
-  --border: #1e2126;
-  --border-strong: #33373d;
+  --bg: #edf0f4;
+  --surface: #dedcd7;
+  --bg-raised: #e6e4df;
+  --ink: #1c2530;
+  --ink-soft: #5a6676;
+  --ink-faint: #8792a0;
+  --accent: #20adc5;
+  --accent-text: #137f92;
+  --accent-ink: #1c2530;
+  --accent-soft: rgba(32, 173, 197, 0.12);
+  --border: #dde2e8;
+  --border-strong: #cbd2da;
 
-  --amber: #d9b36c;
-  --amber-soft: rgba(217, 179, 108, 0.14);
-  --coral: #e0685c;
-  --coral-soft: rgba(224, 104, 92, 0.14);
-  --indigo: #9c8cd6;
-  --indigo-soft: rgba(156, 140, 214, 0.14);
+  --amber: #a8540c;
+  --amber-fill: #e57b1b;
+  --amber-soft: rgba(229, 123, 27, 0.12);
+  --coral: #b0564e;
+  --coral-soft: rgba(176, 86, 78, 0.11);
+  --indigo: #6650d0;
+  --indigo-fill: #9b85fa;
+  --indigo-soft: rgba(155, 133, 250, 0.12);
 
-  /* theme.ts's actual scale — small and rectangular, not a generic
-     rounded-everything SaaS scale. Kept the same names/count as before so
-     nothing below needed restructuring, just smaller values. */
-  --radius-sm: 3px;
-  --radius-md: 4px;
-  --radius-lg: 6px;
-  --radius-xl: 8px;
+  --glow-strength: 34%;
+  --frame-shadow: 0 2rem 4rem -1.8rem rgba(28, 37, 48, 0.45);
+
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
   --radius-full: 999px;
 
   --max-width: 1080px;
-  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'SF Mono', 'Roboto Mono', monospace;
+  --font-body: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0d10;
+    --surface: #14171b;
+    --bg-raised: #1b1f24;
+    --ink: #f2f3f5;
+    --ink-soft: #8b909a;
+    --ink-faint: #656a73;
+    --accent-text: #20adc5;
+    --accent-ink: #0b0d10;
+    --accent-soft: rgba(32, 173, 197, 0.16);
+    --border: #1e2126;
+    --border-strong: #33373d;
+
+    --amber: #e57b1b;
+    --amber-soft: rgba(229, 123, 27, 0.16);
+    --coral: #e0685c;
+    --coral-soft: rgba(224, 104, 92, 0.14);
+    --indigo: #9b85fa;
+    --indigo-soft: rgba(155, 133, 250, 0.16);
+
+    --glow-strength: 46%;
+    --frame-shadow: 0 2rem 4rem -1.5rem rgba(0, 0, 0, 0.6);
+  }
 }
 
 * {
   box-sizing: border-box;
-}
-
-html {
-  color-scheme: dark;
 }
 
 body {
@@ -74,11 +90,12 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .wrap {
@@ -93,8 +110,8 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -102,32 +119,32 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  /* Block padding only, so .wrap's side gutter still applies. */
+  padding-block: 0.9rem;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-family: var(--font-body);
   font-weight: 800;
   letter-spacing: -0.02em;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   color: var(--ink);
   text-decoration: none;
 }
 
 .brand-mark {
-  width: 30px;
-  height: 30px;
-  border-radius: var(--radius-sm);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: 1.75rem;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 600;
 }
 
@@ -143,29 +160,28 @@ a {
 .nav-cta {
   background: var(--accent);
   color: var(--accent-ink) !important;
-  padding: 0.6rem 1.2rem;
-  border-radius: var(--radius-md);
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-full);
   border: none;
   font: inherit;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
 }
-
-/* ---------- Buttons ---------- */
 
 /* ---------- Waitlist ---------- */
 
 .waitlist-dialog {
   width: min(26rem, calc(100vw - 2.5rem));
   padding: 2rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  background: var(--surface);
+  border: none;
+  border-radius: var(--radius-lg);
+  background: var(--bg);
   color: var(--ink);
 }
 
 .waitlist-dialog::backdrop {
-  background: rgba(4, 5, 7, 0.86);
+  background: color-mix(in srgb, var(--ink) 55%, transparent);
+  backdrop-filter: blur(4px);
 }
 
 .waitlist-dialog-head {
@@ -179,7 +195,7 @@ a {
 .waitlist-dialog-title {
   font-weight: 800;
   letter-spacing: -0.02em;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin: 0;
 }
 
@@ -192,7 +208,7 @@ a {
   justify-content: center;
   border-radius: var(--radius-full);
   border: none;
-  background: var(--border-strong);
+  background: var(--surface);
   color: var(--ink-soft);
   font-size: 1.2rem;
   line-height: 1;
@@ -215,9 +231,11 @@ a {
 }
 
 .waitlist-label {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
 }
 
 .waitlist-field {
@@ -230,8 +248,8 @@ a {
   width: 100%;
   padding: 0.85rem 1.1rem;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-strong);
-  background: var(--bg-raised);
+  border: none;
+  background: var(--surface);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 1rem;
@@ -262,25 +280,30 @@ a {
   margin: 0;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
-/* Matches components/ui/Button.tsx exactly — radius.md (4px, not a pill;
-   radius.full is reserved for genuinely circular shapes now, like
-   .card-icon above), min-height 48, spacing.xl (20px) horizontal padding,
-   typography.bodyStrong (15px/600) label. */
+.waitlist-legal {
+  margin: 0.9rem 0 0;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+/* Pill buttons, like the app's own primary actions ("Add 4 habits",
+   "Continue") — navy label on the blue. */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 48px;
-  padding: 0 1.25rem;
-  border-radius: var(--radius-md);
-  font-weight: 600;
-  font-size: 0.94rem;
+  min-height: 52px;
+  padding: 0 1.6rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
   text-decoration: none;
-  border: 1px solid transparent;
+  border: none;
   cursor: pointer;
 }
 
@@ -295,15 +318,14 @@ a {
 }
 
 .btn-secondary {
-  background: var(--bg-raised);
-  border-color: var(--border-strong);
+  background: var(--surface);
   color: var(--ink);
 }
 
 /* ---------- Hero ---------- */
 
 .hero {
-  padding: 5rem 0 4rem;
+  padding: 4.5rem 0 4rem;
 }
 
 .hero-row {
@@ -318,43 +340,39 @@ a {
 
 .hero-media {
   flex: 0 0 auto;
-  width: clamp(200px, 24vw, 280px);
+  width: clamp(220px, 26vw, 300px);
 }
 
-/* Plain small-caps telemetry text, not a filled pill badge — matches
-   theme.ts's typography.eyebrow (Plex Mono, uppercase, letter-spaced),
-   used e.g. for the Today screen's "IN SEASON" label next to its own dot
-   rather than as a chip with a background. */
+/* The app's typography.eyebrow, with the same leading dot as Today's
+   "IN SEASON" telemetry strip. */
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--font-mono);
   font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.09em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1.5rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.4rem;
 }
 
 .eyebrow::before {
   content: '';
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: var(--radius-full);
   background: var(--accent);
   flex-shrink: 0;
 }
 
 .hero-title {
-  font-family: var(--font-body);
   font-weight: 800;
-  font-size: clamp(2.4rem, 5.5vw, 4rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 5.6vw, 4.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
   margin: 0 0 1.3rem;
-  max-width: 16ch;
+  max-width: 15ch;
   text-wrap: balance;
 }
 
@@ -373,7 +391,7 @@ a {
 }
 
 .hero-note {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--ink-faint);
 }
 
@@ -384,42 +402,42 @@ section {
 }
 
 .section-head {
-  max-width: 42ch;
+  max-width: 44ch;
   margin-bottom: 2.5rem;
 }
 
 .section-eyebrow {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-text);
   margin-bottom: 0.6rem;
 }
 
 .section-title {
   font-weight: 800;
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
-  letter-spacing: -0.02em;
-  margin: 0 0 0.6rem;
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.7rem;
   text-wrap: balance;
 }
 
 .section-body {
   color: var(--ink-soft);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
 }
 
 /* ---------- Feature stories ---------- */
 
-/* One big alternating image/copy row per feature, replacing the old small
-   scrolling screenshot carousel — the point is for real app screens to read
-   as the main content of this section, not a supplementary strip. */
+/* One big alternating image/copy row per feature, so the real app screens
+   are the main content of the page. */
 .feature-row {
   display: flex;
   align-items: center;
-  gap: 3.5rem;
-  padding: 3rem 0;
+  gap: 4rem;
+  padding: 3.5rem 0;
   border-top: 1px solid var(--border);
 }
 
@@ -434,43 +452,36 @@ section {
 
 .feature-media {
   flex: 0 0 auto;
-  width: clamp(220px, 30vw, 320px);
+  width: clamp(230px, 30vw, 310px);
 }
 
-/* A bare rounded-rect screenshot reads as a cropped image floating on the
-   page; a chassis around it — bezel, inset screen, a couple of hardware
-   buttons on the edge — reads as a physical device the screenshot is
-   playing on. Kept restrained (a soft brushed-metal gradient, not chrome
-   or glossy highlights) so it dresses up the presentation without
-   competing with the screenshot itself. */
+/* A device chassis around each screenshot — bezel, inset screen, a couple
+   of hardware buttons — so it reads as the app running, not a cropped
+   image. Kept restrained so it never competes with the screen itself. */
 .phone-frame {
   position: relative;
   z-index: 1;
   width: 100%;
-  box-sizing: border-box;
   padding: 0.5rem;
-  border-radius: 2.6rem;
+  border-radius: 2.7rem;
   background: linear-gradient(155deg, #3c414a 0%, #101216 45%, #2a2e35 100%);
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.08),
     inset 0 0 1px 1px rgba(0, 0, 0, 0.5),
-    0 2rem 4rem -1.5rem rgba(0, 0, 0, 0.6);
+    var(--frame-shadow);
 }
 
 .phone-frame img {
   display: block;
   width: 100%;
-  border-radius: 2.15rem;
+  border-radius: 2.2rem;
 }
 
-/* Power button (right edge) and volume rocker (left edge) — enough to
-   silhouette a real device without over-detailing it. */
 .phone-frame::before,
 .phone-frame::after {
   content: '';
   position: absolute;
   background: #101216;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 .phone-frame::before {
@@ -489,72 +500,150 @@ section {
   border-radius: 2px 0 0 2px;
 }
 
-/* A flat, front-on screenshot reads as a static asset dropped onto the page;
-   a slight tilt plus a soft ambient glow reads as something arranged and
-   alive. This only dresses up the marketing presentation around a
-   screenshot — the screenshot itself, and the site's own flat, shadow-free
-   buttons/cards, are untouched. Rows alternate tilt direction so the page
-   has a visual rhythm as you scroll rather than every phone leaning the
-   same way; reverse rows and the hero lean opposite the default. */
+/* A slight tilt and a soft glow in one of the app's status colors behind
+   each phone. Rows alternate the lean so the page has rhythm. */
 .tilt-media {
   position: relative;
 }
 
 .tilt-media .phone-frame {
-  transform: rotate(-6deg);
+  transform: rotate(-5deg);
 }
 
 .tilt-media::before {
   content: '';
   position: absolute;
-  inset: 4% 10%;
+  inset: 6% 8%;
   z-index: 0;
-  background: color-mix(in srgb, var(--accent) 48%, transparent);
-  filter: blur(2.5rem);
-  transform: rotate(-6deg);
+  background: color-mix(in srgb, var(--accent) var(--glow-strength), transparent);
+  filter: blur(3rem);
+  transform: rotate(-5deg);
 }
 
 .hero-media.tilt-media .phone-frame,
 .hero-media.tilt-media::before {
-  transform: rotate(-9deg);
+  transform: rotate(-8deg);
 }
 
 .feature-row.reverse .tilt-media .phone-frame,
 .feature-row.reverse .tilt-media::before {
-  transform: rotate(6deg);
+  transform: rotate(5deg);
 }
 
-/* Each feature row's glow picks up a different accent from the same
-   palette used for card icons elsewhere on the page, so a screenshot
-   reads as its own moment rather than six identical teal halos in a row —
-   still a light touch (the screenshot itself stays the whole point), just
-   enough color behind the glass to lift it off the black page. */
 .tilt-indigo::before {
-  background: color-mix(in srgb, var(--indigo) 48%, transparent);
+  background: color-mix(in srgb, var(--indigo-fill) var(--glow-strength), transparent);
 }
 .tilt-coral::before {
-  background: color-mix(in srgb, var(--coral) 48%, transparent);
+  background: color-mix(in srgb, #e0685c var(--glow-strength), transparent);
 }
 .tilt-amber::before {
-  background: color-mix(in srgb, var(--amber) 48%, transparent);
+  background: color-mix(in srgb, var(--amber-fill) var(--glow-strength), transparent);
 }
 
 .feature-copy {
   flex: 1 1 320px;
 }
 
+.feature-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.5rem;
+}
+
 .feature-title {
   font-weight: 800;
-  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
-  letter-spacing: -0.02em;
-  margin: 0 0 0.7rem;
+  font-size: clamp(1.45rem, 2.5vw, 1.85rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.8rem;
 }
 
 .feature-body {
   color: var(--ink-soft);
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   max-width: 46ch;
   margin: 0;
+}
+
+.feature-points {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.feature-points li {
+  display: flex;
+  gap: 0.65rem;
+  align-items: baseline;
+  color: var(--ink);
+  font-size: 0.98rem;
+}
+
+.feature-points li::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-full);
+  background: var(--accent);
+  flex-shrink: 0;
+  transform: translateY(-1px);
+}
+
+/* The status palette, as the app's Stats breakdown legend uses it. */
+.status-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.3rem;
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.status-chip::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--dot);
+}
+
+/* ---------- Widgets ---------- */
+
+.widget-stage {
+  flex: 0 0 auto;
+  width: clamp(260px, 40vw, 440px);
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(160deg, #9fb4c9 0%, #c9b8d9 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.widget-stage img {
+  width: 100%;
+  border-radius: 22%;
+  box-shadow: 0 0.8rem 1.6rem -0.8rem rgba(28, 37, 48, 0.45);
+}
+
+.widget-stage .widget-wide {
+  grid-column: span 2;
+  border-radius: 11% / 22%;
 }
 
 .feature-support {
@@ -580,7 +669,11 @@ section {
     text-align: center;
   }
   .hero-media {
-    width: min(240px, 60vw);
+    width: min(250px, 62vw);
+  }
+  .hero-title {
+    margin-left: auto;
+    margin-right: auto;
   }
   .hero-subtitle {
     margin-left: auto;
@@ -592,11 +685,15 @@ section {
   .feature-row,
   .feature-row.reverse {
     flex-direction: column;
-    gap: 1.5rem;
-    padding: 2.25rem 0;
+    gap: 2rem;
+    padding: 2.5rem 0;
   }
   .feature-media {
-    width: min(280px, 68vw);
+    width: min(270px, 68vw);
+    margin: 0 auto;
+  }
+  .widget-stage {
+    width: min(400px, 100%);
     margin: 0 auto;
   }
   .feature-copy {
@@ -605,21 +702,23 @@ section {
   .feature-body {
     margin: 0 auto;
   }
+  .feature-points {
+    align-items: center;
+  }
+  .status-legend {
+    justify-content: center;
+  }
 }
 
 .card {
   background: var(--surface);
-  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 1.6rem;
+  padding: 1.7rem;
 }
 
-/* Circular, like the category/habit color dots in the app itself (a
-   filled-circle icon chip, not a rounded square) — see the Habits
-   screenshot above. */
 .card-icon {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
@@ -629,20 +728,21 @@ section {
 }
 
 .card-title {
-  font-weight: 700;
-  font-size: 1.05rem;
+  font-weight: 800;
+  font-size: 1.12rem;
+  letter-spacing: -0.01em;
   margin: 0 0 0.4rem;
 }
 
 .card-body {
   color: var(--ink-soft);
-  font-size: 0.95rem;
+  font-size: 0.97rem;
   margin: 0;
 }
 
 .tint-accent {
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--accent-text);
 }
 .tint-amber {
   background: var(--amber-soft);
@@ -660,11 +760,18 @@ section {
 /* ---------- CTA band ---------- */
 
 .cta-band {
-  background: var(--bg-raised);
+  background: var(--surface);
   border-radius: var(--radius-xl);
-  padding: 3rem 2.5rem;
+  padding: 3.5rem 2.5rem;
   text-align: center;
   margin: 1rem 0 3rem;
+}
+
+.cta-mark {
+  width: 64px;
+  height: 64px;
+  border-radius: 15px;
+  margin: 0 auto 1.4rem;
 }
 
 .cta-band .section-title {
@@ -696,7 +803,7 @@ footer {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
 }
 
 .footer-links a {
@@ -709,7 +816,7 @@ footer {
 }
 
 .footer-copy {
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   color: var(--ink-faint);
 }
 
@@ -721,14 +828,14 @@ footer {
 
 .doc-header h1 {
   font-weight: 800;
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-size: clamp(2rem, 4vw, 2.7rem);
   margin: 0 0 0.4rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .doc-updated {
   color: var(--ink-faint);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   margin-bottom: 2.5rem;
 }
 
@@ -737,10 +844,11 @@ footer {
 }
 
 .doc-body h2 {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
   margin: 2.2rem 0 0.7rem;
   padding-top: 1.2rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border-strong);
 }
 
 .doc-body h2:first-of-type {
@@ -750,7 +858,7 @@ footer {
 
 .doc-body p,
 .doc-body li {
-  font-size: 0.96rem;
+  font-size: 0.98rem;
   color: var(--ink-soft);
 }
 
@@ -769,15 +877,15 @@ footer {
 .doc-body table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   margin: 0.8rem 0 1.5rem;
 }
 
 .doc-body th,
 .doc-body td {
   text-align: left;
-  padding: 0.55rem 0.6rem;
-  border-bottom: 1px solid var(--border);
+  padding: 0.6rem 0.6rem;
+  border-bottom: 1px solid var(--border-strong);
   vertical-align: top;
 }
 
@@ -786,7 +894,7 @@ footer {
   font-weight: 700;
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.06em;
 }
 
 .scroll-x {
@@ -796,27 +904,27 @@ footer {
 /* ---------- FAQ ---------- */
 
 .faq-item {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-strong);
   padding: 1.4rem 0;
 }
 
 .faq-item h3 {
-  font-size: 1.02rem;
+  font-size: 1.08rem;
+  letter-spacing: -0.01em;
   margin: 0 0 0.5rem;
 }
 
 .faq-item p {
   color: var(--ink-soft);
   margin: 0;
-  font-size: 0.96rem;
+  font-size: 0.98rem;
 }
 
 /* ---------- Responsive nav ---------- */
 
 @media (max-width: 640px) {
-  /* Keep the primary CTA reachable from the sticky nav on mobile — only the
-     secondary text links (Features/FAQ/Support) drop, not the whole group,
-     so there's still a way to get the app without scrolling. */
+  /* Only the secondary text links drop; the waitlist button stays in the
+     sticky nav so it's always reachable. */
   .nav-links a:not(.nav-cta) {
     display: none;
   }
@@ -827,6 +935,10 @@ footer {
     padding: 3rem 0 2.5rem;
   }
   .cta-band {
-    padding: 2.2rem 1.4rem;
+    padding: 2.4rem 1.4rem;
+  }
+  .widget-stage {
+    padding: 1.4rem;
+    gap: 0.8rem;
   }
 }

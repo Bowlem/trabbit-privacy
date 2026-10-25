@@ -7,14 +7,16 @@
 <meta name="description" content="The terms that govern your use of the Trabit app.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/mark.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <nav class="nav">
   <div class="wrap nav-row">
     <a class="brand" href="/">
-      <img class="brand-mark" src="/assets/mark.png" alt="" width="30" height="30">
+      <img class="brand-mark" src="/assets/mark.png" alt="" width="32" height="32">
       Trabit
     </a>
     <div class="nav-links">
@@ -30,7 +32,7 @@
   <div class="wrap">
     <div class="doc-header">
       <h1>Terms of Service</h1>
-      <p class="doc-updated">Last updated 19 August 2026</p>
+      <p class="doc-updated">Last updated 25 October 2026</p>
     </div>
 
     <div class="doc-body">
@@ -49,7 +51,7 @@
       </ul>
 
       <h2 id="subscriptions">Subscriptions and payment</h2>
-      <p>Some features require a paid subscription, purchased through Apple's in-app purchase system. The following applies to any subscription you purchase:</p>
+      <p>Using the App requires a paid subscription, purchased through Apple's in-app purchase system. The following applies to any subscription you purchase:</p>
       <ul>
         <li>Payment is charged to your Apple ID at the time of purchase, at the price and billing period (weekly, monthly, or annual) shown in the App at checkout.</li>
         <li>Subscriptions <strong>renew automatically</strong> at the end of each period unless you cancel at least 24 hours before it ends.</li>
@@ -67,6 +69,11 @@
 
       <h2 id="acceptable-use">Acceptable use</h2>
       <p>You agree not to: use the App for any unlawful purpose; attempt to gain unauthorized access to our systems or another user's account; interfere with the App's normal operation; or reverse-engineer the App beyond what's permitted by applicable law.</p>
+
+      <h2 id="social">Social</h2>
+      <p>Joining Social is optional. If you join, your Social name, username, Consistency Rating and rank are visible to other Trabit users. Your habits, notes and tests stay private.</p>
+      <p>We have zero tolerance for objectionable content or abusive users. Your name and username must not be offensive, hateful, sexually explicit, or impersonate anyone else, and you must not use Social to harass other users. You can block anyone, which hides them from you, and report anyone from their profile. We review reports within 24 hours and may change or remove a name, remove someone from Social, or close an account that breaks these rules.</p>
+      <p>The Consistency Rating is calculated by us from what you've logged. Deliberately logging things you didn't do to raise your rating is against these terms.</p>
 
       <h2 id="ip">Intellectual property</h2>
       <p>The App itself — its design, code, and branding — belongs to Matthew Bowler. These Terms don't grant you any rights to it beyond using the App as intended.</p>
@@ -118,12 +125,13 @@
     </div>
     <div class="waitlist-field">
       <label class="waitlist-label" for="waitlist-phone">Phone number</label>
-      <input class="waitlist-input" id="waitlist-phone" type="tel" name="phone" placeholder="+1 555 123 4567" required>
+      <input class="waitlist-input" id="waitlist-phone" type="tel" name="phone" placeholder="+44 7700 900123" required>
     </div>
     <button class="btn btn-primary" type="submit">Notify me</button>
   </form>
   <p class="waitlist-status" data-waitlist-status role="status"></p>
-  <p class="waitlist-success" data-waitlist-success hidden>You're on the list — we'll text and email you when the beta's ready to download.</p>
+  <p class="waitlist-success" data-waitlist-success hidden>You're on the list. We'll text and email you when the beta's ready to download.</p>
+  <p class="waitlist-legal">Used only to tell you about Trabit. See the <a href="/privacy/">Privacy Notice</a>.</p>
 </dialog>
 
 <script src="/waitlist.js"></script>

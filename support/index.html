@@ -7,14 +7,16 @@
 <meta name="description" content="Get help with Trabit, or send feedback straight to the developer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/mark.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <nav class="nav">
   <div class="wrap nav-row">
     <a class="brand" href="/">
-      <img class="brand-mark" src="/assets/mark.png" alt="" width="30" height="30">
+      <img class="brand-mark" src="/assets/mark.png" alt="" width="32" height="32">
       Trabit
     </a>
     <div class="nav-links">
@@ -45,9 +47,9 @@
 
       <h2 id="common">Common questions</h2>
       <ul>
-        <li><strong>A habit or log isn't syncing from Apple Health / WHOOP.</strong> Check it's still linked in Settings, and that the source itself (Health app, or your WHOOP account) actually has data for that day — Trabit only reads what's already there, it can't sync a metric that hasn't landed yet.</li>
+        <li><strong>A habit isn't syncing from Apple Health / WHOOP.</strong> Check it's still linked in Settings, and that the source itself (Health app, or your WHOOP account) actually has data for that day — Trabit only reads what's already there, it can't sync a metric that hasn't landed yet.</li>
         <li><strong>I want to change my email or delete my account.</strong> Account deletion is immediate and available anytime in Settings. For an email change, contact us directly.</li>
-        <li><strong>My subscription isn't showing as active.</strong> Try Settings → Restore Purchases first — this re-syncs your entitlement from Apple. If that doesn't fix it, get in touch and we'll look into it.</li>
+        <li><strong>My subscription isn't showing as active.</strong> Tap Restore Purchases at the bottom of the subscription screen first — this re-syncs your subscription from Apple. If that doesn't fix it, get in touch and we'll look into it.</li>
         <li><strong>I found a bug.</strong> Send it our way via either channel above — screenshots help a lot.</li>
       </ul>
       <p>For anything about how your data is handled, see the <a href="/privacy/">Privacy Notice</a>. For billing terms, see the <a href="/terms/">Terms of Service</a>. More general questions are answered on the <a href="/faq/">FAQ</a>.</p>
@@ -79,12 +81,13 @@
     </div>
     <div class="waitlist-field">
       <label class="waitlist-label" for="waitlist-phone">Phone number</label>
-      <input class="waitlist-input" id="waitlist-phone" type="tel" name="phone" placeholder="+1 555 123 4567" required>
+      <input class="waitlist-input" id="waitlist-phone" type="tel" name="phone" placeholder="+44 7700 900123" required>
     </div>
     <button class="btn btn-primary" type="submit">Notify me</button>
   </form>
   <p class="waitlist-status" data-waitlist-status role="status"></p>
-  <p class="waitlist-success" data-waitlist-success hidden>You're on the list — we'll text and email you when the beta's ready to download.</p>
+  <p class="waitlist-success" data-waitlist-success hidden>You're on the list. We'll text and email you when the beta's ready to download.</p>
+  <p class="waitlist-legal">Used only to tell you about Trabit. See the <a href="/privacy/">Privacy Notice</a>.</p>
 </dialog>
 
 <script src="/waitlist.js"></script>

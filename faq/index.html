@@ -7,14 +7,16 @@
 <meta name="description" content="Answers to common questions about Trabit.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/mark.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <nav class="nav">
   <div class="wrap nav-row">
     <a class="brand" href="/">
-      <img class="brand-mark" src="/assets/mark.png" alt="" width="30" height="30">
+      <img class="brand-mark" src="/assets/mark.png" alt="" width="32" height="32">
       Trabit
     </a>
     <div class="nav-links">
@@ -35,39 +37,47 @@
     <div class="doc-body" style="max-width: 60rem;">
       <div class="faq-item">
         <h3>What is Trabit, exactly?</h3>
-        <p>A training tracker for athletes with three connected pieces: recurring habits (with real season/rehab-aware scheduling), training logs for the sessions worth journaling, and performance tests for tracking numbers like lift maxes or sprint times over a season.</p>
+        <p>A training tracker for athletes. It brings together recurring habits (scheduled around your season and any rehab), a notebook for session reviews and notes, and performance tests for numbers like lift maxes, sprint times and jump heights.</p>
       </div>
       <div class="faq-item">
         <h3>What makes it different from other habit trackers?</h3>
-        <p>Most habit apps only track "done or not done," and quietly let you edit history to protect a streak. Trabit tracks partial completion and late (backlog) completion as their own honest states — a missed day stays missed, and your streak is computed from what actually happened.</p>
+        <p>Most habit apps only know "done or not done," and let you quietly edit history to protect a streak. Trabit records partial and late completions as their own states, gives you one day to catch up on anything you forgot to log, and then locks the day. A missed day stays missed, and your streak is worked out from what actually happened.</p>
       </div>
       <div class="faq-item">
-        <h3>Is Trabit free?</h3>
-        <p>Trabit has a free tier and an optional paid subscription for the full feature set. Pricing and any trial are shown in the App at checkout — see the <a href="/terms/">Terms of Service</a> for how billing works.</p>
+        <h3>How much does it cost?</h3>
+        <p>Trabit is a subscription app, with monthly and annual plans. Where a free trial is offered, it's shown on the subscription screen before you pay, along with the price in your currency. See the <a href="/terms/">Terms of Service</a> for how billing and cancellation work.</p>
       </div>
       <div class="faq-item">
         <h3>Does it work with Apple Health?</h3>
-        <p>Yes. You can link a habit to a Health metric — steps, calories, exercise minutes, distance, or stand hours — and it'll auto-complete once Health reports enough for the day. Access is read-only; Trabit never writes to Apple Health.</p>
+        <p>Yes. Link a habit to steps, active energy, exercise minutes, walking and running distance, or stand hours, and it completes itself once Health reports enough for the day. Access is read-only; Trabit never writes to Apple Health.</p>
       </div>
       <div class="faq-item">
         <h3>Does it work with WHOOP?</h3>
-        <p>Yes. Connect your WHOOP account in Settings to link habits to recovery score, HRV, resting heart rate, sleep performance, or day strain, and to see that history plotted over time on the Progress tab. Also read-only.</p>
+        <p>Yes. Connect your WHOOP account in Settings to link habits to recovery, HRV, resting heart rate, sleep performance or day strain, and to plot that history in Stats. Also read-only, and you can disconnect at any time.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the Consistency Rating?</h3>
+        <p>A score for how much of your own plan you actually completed, over the last 28 days or all time. It's calculated on our servers from what you logged, so it can't be edited. Joining Social is optional: if you join, other Trabit users can see your name and rating on the leaderboard, but never your habits, notes or tests.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Are there Home Screen widgets?</h3>
+        <p>Yes. One shows today's progress and your streak, and another opens straight to today's note. Touch and hold your Home Screen, tap Edit, then Add Widget, and choose Trabit.</p>
       </div>
       <div class="faq-item">
         <h3>What platforms is Trabit available on?</h3>
-        <p>iOS, currently in TestFlight beta. There's no Android version yet.</p>
+        <p>iPhone, currently in beta through TestFlight. There's no Android version yet.</p>
       </div>
       <div class="faq-item">
         <h3>How is my data kept private?</h3>
-        <p>Every table in the database enforces row-level security, so your data is only ever accessible to your own account — even at the database layer. We don't sell your data or use it for advertising. Full details in the <a href="/privacy/">Privacy Notice</a>.</p>
+        <p>Every table in the database enforces row-level security, so your data is only accessible to your own account, even at the database layer. Your notebook can be locked behind Face ID. We don't sell your data or use it for advertising. Full details are in the <a href="/privacy/">Privacy Notice</a>.</p>
       </div>
       <div class="faq-item">
         <h3>Can I export or delete my data?</h3>
-        <p>You can delete your account and everything in it at any time from Settings — it's immediate and permanent. For a data export, contact <a href="mailto:bowlerm007@gmail.com">bowlerm007@gmail.com</a>.</p>
+        <p>You can delete your account and everything in it at any time from Settings. It's immediate and permanent. For a data export, contact <a href="mailto:bowlerm007@gmail.com">bowlerm007@gmail.com</a>.</p>
       </div>
       <div class="faq-item">
         <h3>I have a different question.</h3>
-        <p>Visit <a href="/support/">Support</a> or email <a href="mailto:bowlerm007@gmail.com">bowlerm007@gmail.com</a> — it goes straight to the developer.</p>
+        <p>Visit <a href="/support/">Support</a> or email <a href="mailto:bowlerm007@gmail.com">bowlerm007@gmail.com</a>. It goes straight to the developer.</p>
       </div>
     </div>
   </div>
@@ -97,12 +107,13 @@
     </div>
     <div class="waitlist-field">
       <label class="waitlist-label" for="waitlist-phone">Phone number</label>
-      <input class="waitlist-input" id="waitlist-phone" type="tel" name="phone" placeholder="+1 555 123 4567" required>
+      <input class="waitlist-input" id="waitlist-phone" type="tel" name="phone" placeholder="+44 7700 900123" required>
     </div>
     <button class="btn btn-primary" type="submit">Notify me</button>
   </form>
   <p class="waitlist-status" data-waitlist-status role="status"></p>
-  <p class="waitlist-success" data-waitlist-success hidden>You're on the list — we'll text and email you when the beta's ready to download.</p>
+  <p class="waitlist-success" data-waitlist-success hidden>You're on the list. We'll text and email you when the beta's ready to download.</p>
+  <p class="waitlist-legal">Used only to tell you about Trabit. See the <a href="/privacy/">Privacy Notice</a>.</p>
 </dialog>
 
 <script src="/waitlist.js"></script>

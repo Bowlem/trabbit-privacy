@@ -7,14 +7,16 @@
 <meta name="description" content="How Trabit collects, uses, and protects your data.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/mark.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <nav class="nav">
   <div class="wrap nav-row">
     <a class="brand" href="/">
-      <img class="brand-mark" src="/assets/mark.png" alt="" width="30" height="30">
+      <img class="brand-mark" src="/assets/mark.png" alt="" width="32" height="32">
       Trabit
     </a>
     <div class="nav-links">
@@ -30,12 +32,12 @@
   <div class="wrap">
     <div class="doc-header">
       <h1>Privacy Notice</h1>
-      <p class="doc-updated">Last updated 19 August 2026</p>
+      <p class="doc-updated">Last updated 25 October 2026</p>
     </div>
 
     <div class="doc-body">
       <h2 id="intro">Introduction</h2>
-      <p>This privacy notice describes how we collect, use, share and otherwise process your personal data in connection with your use of the Trabit mobile application (<strong>App</strong>).</p>
+      <p>This privacy notice describes how we collect, use, share and otherwise process your personal data in connection with your use of the Trabit mobile application (<strong>App</strong>) and our website, trabbit.net (<strong>Site</strong>).</p>
       <p>Trabit is not intended for children, and we do not knowingly collect data relating to children.</p>
       <p>Please read the following carefully to understand our practices regarding your personal data and how we treat it.</p>
 
@@ -56,13 +58,18 @@
         <li><strong>Account Data</strong> — your Trabit account credentials, or, if you choose Sign in with Apple or Google, the identity information those providers share with us (typically your name and email).</li>
         <li><strong>Health Data</strong> — if you link a habit to Apple Health, we read specific metrics (for example step count) from HealthKit to automatically mark that habit complete for the day. This access is <strong>read-only</strong> — Trabit never writes to or modifies your Apple Health data. You control this per habit, and can revoke access at any time in iOS Settings.</li>
         <li><strong>Wearable Data</strong> — if you connect a WHOOP account, we read recovery, HRV, resting heart rate, sleep performance, and day strain data via WHOOP's API to automatically mark linked habits complete and to show your history over time. This access is also read-only, and you can disconnect it at any time in Settings.</li>
-        <li><strong>Content Data</strong> — the habits, logs, and tests you create, including their names, schedules, categories, colors/icons, and the values or journal entries you record against them.</li>
+        <li><strong>Content Data</strong> — the habits, notebook entries and prompts, and tests you create, including their names, schedules, categories and colors, the values you record against them, and the text of your notes.</li>
+        <li><strong>Photo Data</strong> — if you use a photo habit, the photos you take or choose as evidence. They're stored privately in our database provider's file storage and are only visible to you.</li>
+        <li><strong>Social Data</strong> — only if you choose to join Social: the name and username you show there, the people you follow, block or report, and the Consistency Rating we calculate from your completion history. Your rating, rank and name are visible to other Trabit users on the leaderboard; your habits, notes and tests are not.</li>
+        <li><strong>Voice Data</strong> — if you use dictation in the notebook, your speech is turned into text by Apple's speech recognition service on your iPhone. We receive only the resulting text, never the audio.</li>
         <li><strong>Feedback Data</strong> — any message you submit via the feedback form in Settings.</li>
-        <li><strong>Device and Usage Data</strong> — basic technical information needed to operate the App and diagnose problems, such as your device type and operating system version.</li>
-        <li><strong>Notification Preferences</strong> — whether you've opted in to backlog-alert or evening-reminder push notifications (both default off), and your push token if so.</li>
+        <li><strong>Device and Usage Data</strong> — technical information needed to operate the App and diagnose problems, such as your device type and operating system version, and product analytics about how the App is used (for example which screens are viewed and which steps of setup are completed), linked to your account ID.</li>
+        <li><strong>Notification Preferences</strong> — which reminders you've turned on (habit reminders, evening and backlog reminders, the morning check-in, and Social notifications), their times, and your device push token if you allow notifications.</li>
+        <li><strong>Waitlist Data</strong> — if you join the waitlist on the Site, your email address and phone number.</li>
         <li><strong>Payment Data</strong> — if you subscribe, Apple processes your payment directly; we receive only your subscription status and entitlement from our payments provider (RevenueCat), never your card details.</li>
       </ul>
       <p>We do not collect any special category data beyond the Health/Wearable Data described above, and we do not collect location data or data from advertising networks or data brokers — Trabit has no ads and no location tracking.</p>
+      <p>If you lock your notebook with Face ID, the check happens entirely on your iPhone. We never receive any biometric data, only whether the unlock succeeded.</p>
 
       <h2 id="how-collected">How we collect your data</h2>
       <ul>
@@ -70,8 +77,12 @@
         <li><strong>Using the App.</strong> Each time you create or update a habit, log, or test, we collect the Content Data you enter.</li>
         <li><strong>Apple Health.</strong> If you link a habit to Apple Health and grant permission, we read the relevant Health Data from your device.</li>
         <li><strong>WHOOP.</strong> If you connect your WHOOP account, we read the relevant Wearable Data via WHOOP's API on your behalf.</li>
+        <li><strong>Photo habits.</strong> When you attach a photo to a habit, we upload it to private storage linked to your account.</li>
+        <li><strong>Social.</strong> If you join Social, we collect the name and username you choose and the follows, blocks and reports you make, and calculate your Consistency Rating each day.</li>
+        <li><strong>Analytics.</strong> As you use the App, it sends usage events to PostHog, our analytics provider.</li>
+        <li><strong>Waitlist.</strong> If you join the waitlist on the Site, we collect the email address and phone number you enter.</li>
         <li><strong>Feedback.</strong> If you submit the in-app feedback form, we collect your message and associate it with your account so we can act on it — this is a one-way channel; we don't offer in-app live chat or phone support.</li>
-        <li><strong>Notifications.</strong> If you opt in to either reminder toggle in Settings, we collect a device push token to deliver it.</li>
+        <li><strong>Notifications.</strong> If you allow notifications and turn on any reminder in Settings or during setup, we collect a device push token to deliver them.</li>
         <li><strong>Subscribing.</strong> If you subscribe, Apple and RevenueCat process the transaction and share your subscription status with us.</li>
       </ul>
 
@@ -81,9 +92,12 @@
       <table>
         <tr><th>Purpose</th><th>Data used</th><th>Lawful basis</th></tr>
         <tr><td>Create and manage your account</td><td>Identity, Contact, Account</td><td>Performance of a contract</td></tr>
-        <tr><td>Operate the App's core features (habits, logs, tests, streaks)</td><td>Content Data</td><td>Performance of a contract</td></tr>
+        <tr><td>Operate the App's core features (habits, notebook, tests, streaks, photo habits)</td><td>Content Data, Photo Data, Voice Data</td><td>Performance of a contract</td></tr>
+        <tr><td>Show your Consistency Rating and rank on the Social leaderboard</td><td>Social Data, Content Data</td><td>Consent (Social is opt-in, and you can leave at any time)</td></tr>
         <tr><td>Auto-complete Health- or WHOOP-linked habits</td><td>Health Data, Wearable Data</td><td>Consent (you link each habit individually)</td></tr>
-        <tr><td>Send backlog-alert or evening-reminder push notifications</td><td>Notification Preferences</td><td>Consent (both toggles default off)</td></tr>
+        <tr><td>Send the reminders and notifications you've turned on</td><td>Notification Preferences</td><td>Consent (iOS asks before any are sent, and each can be turned off)</td></tr>
+        <tr><td>Understand how the App is used so we can improve it</td><td>Device and Usage Data</td><td>Legitimate interests (improving the App)</td></tr>
+        <tr><td>Tell you when the App is available to download</td><td>Waitlist Data</td><td>Consent (you join the waitlist yourself)</td></tr>
         <tr><td>Process your subscription</td><td>Payment Data</td><td>Performance of a contract</td></tr>
         <tr><td>Respond to feedback or support requests</td><td>Feedback Data, Contact Data</td><td>Legitimate interests (supporting our users)</td></tr>
         <tr><td>Maintain security and prevent misuse</td><td>Device and Usage Data</td><td>Legitimate interests (keeping the App and its users safe)</td></tr>
@@ -97,6 +111,9 @@
         <li><strong>Supabase</strong> (our backend/database provider), which hosts our database and authentication in the EEA (Ireland). Every table in our database enforces row-level security, so your data is only ever accessible to your own authenticated account, even at the database layer.</li>
         <li><strong>Apple and Google</strong>, if you choose to sign in with either — they process your sign-in identity data under their own privacy policies.</li>
         <li><strong>WHOOP</strong>, if you connect your account — WHOOP processes the authorization under their own privacy policy.</li>
+        <li><strong>PostHog</strong>, our product analytics provider, which stores App usage events in the EU (Frankfurt).</li>
+        <li><strong>Expo</strong>, whose push notification service delivers the reminders you've turned on to Apple's notification service.</li>
+        <li><strong>Other Trabit users</strong>, who can see your Social name, rating and rank if you join Social. Nothing else about you is visible to them.</li>
         <li><strong>RevenueCat</strong>, our subscription management provider, which relays your entitlement status from Apple to our backend.</li>
         <li><strong>Apple</strong>, as the distributor of the App through the App Store, for payment processing, and for HealthKit access if you enable it.</li>
         <li>Law enforcement or regulators, where we're legally required to disclose information.</li>
@@ -105,18 +122,20 @@
 
       <h2 id="transfers">International transfers</h2>
       <p>Your data is primarily stored in the EEA (Ireland), via Supabase. Because Trabit is used from the UK, this involves a transfer of your data outside the UK to the EEA, which is covered by the UK's own adequacy regulations for EEA countries — no additional safeguard is required for this specific transfer.</p>
+      <p>Expo and RevenueCat may process limited data (your push token, or your anonymous subscription identifier) in the United States, under their own transfer safeguards.</p>
       <p>If you sign in with Apple or Google, or connect WHOOP, a limited amount of identity/wearable data is processed by those companies as part of the relevant flow, under their own respective privacy policies and transfer safeguards.</p>
 
       <h2 id="security">Data security</h2>
       <ul>
         <li>Your data is stored on Supabase's infrastructure in the EEA (Ireland), and all connections between the App and our backend use TLS (HTTPS) encryption in transit.</li>
         <li>Every table in our database has row-level security enabled, restricting access to your own data even if a database credential were compromised — access is enforced at the database layer, not just in the App's own code.</li>
-        <li>A small amount of non-sensitive local state (for example, which sections of a screen you've expanded) is cached on your device; this never includes your account credentials.</li>
+        <li>A copy of your recent data is cached on your device so the App works offline. Signing out clears it.</li>
         <li>You're responsible for keeping your device and account credentials secure — don't share your password with anyone.</li>
       </ul>
 
       <h2 id="retention">Data retention</h2>
       <p>We retain your account data for as long as you have an active account.</p>
+      <p>We keep Waitlist Data until the App is publicly available and we've let you know, or until you ask us to remove it.</p>
       <p>You can delete your account and all associated data at any time from within the App, in Settings — this is immediate and permanent.</p>
 
       <h2 id="rights">Your legal rights</h2>
@@ -128,7 +147,7 @@
         <li><strong>Object</strong> to processing based on legitimate interests.</li>
         <li><strong>Restrict</strong> our processing of your data in certain circumstances.</li>
         <li><strong>Port</strong> your data to another service, where technically feasible.</li>
-        <li><strong>Withdraw consent</strong> at any time for anything we process on that basis (Health/Wearable Data access, push notifications) — directly in the App or in iOS Settings.</li>
+        <li><strong>Withdraw consent</strong> at any time for anything we process on that basis (Health/Wearable Data access, notifications, Social, the waitlist) — directly in the App, in iOS Settings, or by contacting us.</li>
       </ul>
       <p>To exercise any of these rights, contact us at <a href="mailto:bowlerm007@gmail.com">bowlerm007@gmail.com</a>. You can also complain directly to the ICO at any time.</p>
 
@@ -139,10 +158,14 @@
         <li><strong>Account Data:</strong> your Trabit credentials, or Apple/Google sign-in identity data.</li>
         <li><strong>Health Data:</strong> the specific Apple Health metrics you've linked to a habit (read-only).</li>
         <li><strong>Wearable Data:</strong> the specific WHOOP metrics you've linked to a habit (read-only).</li>
-        <li><strong>Content Data:</strong> habit, log, and test names, schedules, categories, and the values/entries you record.</li>
+        <li><strong>Content Data:</strong> habit, notebook and test names, schedules, categories, the values you record, and your notes.</li>
+        <li><strong>Photo Data:</strong> photos you attach to photo habits.</li>
+        <li><strong>Social Data:</strong> your Social name and username, follows, blocks, reports, and Consistency Rating (only if you join Social).</li>
+        <li><strong>Voice Data:</strong> the text of anything you dictate (the audio itself never reaches us).</li>
         <li><strong>Feedback Data:</strong> the text of any feedback you submit.</li>
-        <li><strong>Device and Usage Data:</strong> device type, OS version, and basic diagnostic information.</li>
-        <li><strong>Notification Preferences:</strong> your reminder toggle settings and device push token, if enabled.</li>
+        <li><strong>Device and Usage Data:</strong> device type, OS version, diagnostic information, and product analytics events.</li>
+        <li><strong>Notification Preferences:</strong> which reminders you've turned on, their times, and your device push token.</li>
+        <li><strong>Waitlist Data:</strong> the email address and phone number you enter on the Site.</li>
         <li><strong>Payment Data:</strong> your subscription status and entitlement (never your card details, which Apple processes directly).</li>
       </ul>
 
@@ -175,12 +198,13 @@
     </div>
     <div class="waitlist-field">
       <label class="waitlist-label" for="waitlist-phone">Phone number</label>
-      <input class="waitlist-input" id="waitlist-phone" type="tel" name="phone" placeholder="+1 555 123 4567" required>
+      <input class="waitlist-input" id="waitlist-phone" type="tel" name="phone" placeholder="+44 7700 900123" required>
     </div>
     <button class="btn btn-primary" type="submit">Notify me</button>
   </form>
   <p class="waitlist-status" data-waitlist-status role="status"></p>
-  <p class="waitlist-success" data-waitlist-success hidden>You're on the list — we'll text and email you when the beta's ready to download.</p>
+  <p class="waitlist-success" data-waitlist-success hidden>You're on the list. We'll text and email you when the beta's ready to download.</p>
+  <p class="waitlist-legal">Used only to tell you about Trabit. See the <a href="/privacy/">Privacy Notice</a>.</p>
 </dialog>
 
 <script src="/waitlist.js"></script>

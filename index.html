@@ -4,17 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trabit — Training Tracker for Athletes</title>
-<meta name="description" content="Habits, training logs, and performance tests in one place — tracked honestly. No fake streaks. Syncs with Apple Health and WHOOP.">
+<meta name="description" content="Habits, notes and performance tests in one place, tracked honestly. Season-aware schedules, real streaks, a Consistency Rating, and Apple Health and WHOOP sync.">
+<meta property="og:title" content="Trabit — Training Tracker for Athletes">
+<meta property="og:description" content="No fake streaks. Just real training.">
+<meta property="og:image" content="https://trabbit.net/assets/screenshots/today.jpg">
+<meta name="theme-color" content="#EDF0F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0D10" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="/assets/mark.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <nav class="nav">
   <div class="wrap nav-row">
     <a class="brand" href="/">
-      <img class="brand-mark" src="/assets/mark.png" alt="" width="30" height="30">
+      <img class="brand-mark" src="/assets/mark.png" alt="" width="32" height="32">
       Trabit
     </a>
     <div class="nav-links">
@@ -33,17 +40,18 @@
         <span class="eyebrow">Built for athletes, not habit tourists</span>
         <h1 class="hero-title">No fake streaks. Just real training.</h1>
         <p class="hero-subtitle">
-          Habits, training logs, and tests — all in one place, built for how athletes actually train.
-          Missed is missed, partial is partial. Trabit tracks what really happened, not what looks good.
+          Habits, notes and performance tests in one place, built around your season. Missed is missed,
+          partial is partial. Trabit tracks what really happened, not what looks good.
         </p>
         <div class="hero-actions">
           <button class="btn btn-primary" type="button" data-waitlist-open>Join the waitlist</button>
+          <a class="btn btn-secondary" href="#features">See how it works</a>
         </div>
-        <p class="hero-note">iOS. Launching soon. <a href="#features">See how it works →</a></p>
+        <p class="hero-note">For iPhone. In beta now, launching soon.</p>
       </div>
       <div class="hero-media tilt-media">
         <div class="phone-frame">
-          <img src="/assets/screenshots/today.png" alt="Trabit's Today screen, showing an overall streak ring, progress toward the next milestone, and Strength &amp; Conditioning and Recovery &amp; Mobility categories.">
+          <img src="/assets/screenshots/today.jpg" alt="Trabit's Today screen: a 26-day overall streak in the main ring, 100% weekly consistency and a 22-day training review streak beside it, a week of completed rings above, and today's Strength &amp; Conditioning habits below." width="780" height="1696">
         </div>
       </div>
     </div>
@@ -55,100 +63,133 @@
         <div class="section-eyebrow">Inside the app</div>
         <h2 class="section-title">Built to track training the way it actually happens</h2>
         <p class="section-body">
-          Trabit doesn't collapse everything into a single streak number. Each piece of your training
-          gets tracked — and shown — the way it actually works.
+          Trabit doesn't collapse everything into one number. Every habit, note and test is tracked, and
+          shown, the way it really went.
         </p>
       </div>
 
       <div class="feature-row">
         <div class="feature-media tilt-media">
           <div class="phone-frame">
-            <img src="/assets/screenshots/today.png" alt="Trabit's Today screen, showing an overall streak ring, progress toward the next milestone, and Strength &amp; Conditioning and Recovery &amp; Mobility categories." loading="lazy">
+            <img src="/assets/screenshots/today.jpg" alt="Trabit's Today screen with today's ring, streaks, and habits grouped by category." width="780" height="1696" loading="lazy">
           </div>
         </div>
         <div class="feature-copy">
-          <h3 class="feature-title">Habits, honestly scheduled</h3>
+          <div class="feature-tag">Today</div>
+          <h3 class="feature-title">Your day, honestly scheduled</h3>
           <p class="feature-body">
-            Recurring habits that know your season — preseason, in-season, offseason, or rehab. A missed
-            day shows as missed. A partial effort shows as partial. Your streak reflects what actually
-            happened, right there on Today.
+            Habits grouped the way you train, due on the days you train. Tick them off, log an amount, or
+            swipe one away as not done. Forgot to log last night? You get one day to catch up, and it's
+            marked as late, not quietly rewritten.
           </p>
+          <div class="status-legend" aria-label="How every habit is recorded">
+            <span class="status-chip" style="--dot: var(--accent)">On time</span>
+            <span class="status-chip" style="--dot: var(--indigo-fill)">Late</span>
+            <span class="status-chip" style="--dot: var(--amber-fill)">Partial</span>
+            <span class="status-chip" style="--dot: var(--coral)">Missed</span>
+          </div>
         </div>
       </div>
 
       <div class="feature-row reverse">
         <div class="feature-media tilt-media tilt-indigo">
           <div class="phone-frame">
-            <img src="/assets/screenshots/onboarding.png" alt="Trabit's onboarding screen, where a new user picks their current season phase, sport, and goal." loading="lazy">
+            <img src="/assets/screenshots/stats.jpg" alt="Trabit's Stats view: 99% completion this month, 175 of 177 completed, a best streak of 26, and the on time, late, partial and missed breakdown." width="780" height="1696" loading="lazy">
           </div>
         </div>
         <div class="feature-copy">
-          <h3 class="feature-title">Built around your season</h3>
+          <div class="feature-tag">Stats</div>
+          <h3 class="feature-title">Know exactly where you stand</h3>
           <p class="feature-body">
-            Setup starts by asking what phase you're actually in and what you're training for — not a
-            generic one-size calendar. What's due today, and how backlog windows behave, adapts to the
-            season you picked.
+            Completion over a week, a month, a season or all time, split into on time, late, partial and
+            missed. Trabit points out what changed, and lets you plot any habit, test or synced metric against
+            another.
           </p>
         </div>
       </div>
 
       <div class="feature-row">
-        <div class="feature-media tilt-media tilt-coral">
-          <div class="phone-frame">
-            <img src="/assets/screenshots/notebook.png" alt="Trabit's Notebook screen, showing a written training entry with the dictation microphone actively listening." loading="lazy">
-          </div>
-        </div>
-        <div class="feature-copy">
-          <h3 class="feature-title">A journal for what doesn't fit in a checkbox</h3>
-          <p class="feature-body">
-            A place for the sessions that don't reduce to a tick — how a lift felt, what you noticed in a
-            run, what to fix next time. Dictate it straight after a session, and lock it behind Face ID if
-            you'd rather keep it private.
-          </p>
-        </div>
-      </div>
-
-      <div class="feature-row reverse">
         <div class="feature-media tilt-media tilt-amber">
           <div class="phone-frame">
-            <img src="/assets/screenshots/test-pr.png" alt="Trabit's Test detail screen for a 40-Yard Dash, showing a trend sparkline and a training log of past attempts getting faster." loading="lazy">
+            <img src="/assets/screenshots/calendar.jpg" alt="Trabit's Calendar view: a month calendar per habit, with completed days filled and target habits showing rings that fill toward the goal." width="780" height="1696" loading="lazy">
           </div>
         </div>
         <div class="feature-copy">
-          <h3 class="feature-title">Every test, trending</h3>
+          <div class="feature-tag">Calendar</div>
+          <h3 class="feature-title">The full history, in the open</h3>
           <p class="feature-body">
-            Track the numbers that actually matter over a season — 40-yard splits, max lifts, mile times —
-            and Trabit tells you the moment you beat your own best, no interpretation required.
-          </p>
-        </div>
-      </div>
-
-      <div class="feature-row">
-        <div class="feature-media tilt-media">
-          <div class="phone-frame">
-            <img src="/assets/screenshots/calendars.png" alt="Trabit's Calendars screen, showing a month of habit completion history at a glance." loading="lazy">
-          </div>
-        </div>
-        <div class="feature-copy">
-          <h3 class="feature-title">The full history, honestly</h3>
-          <p class="feature-body">
-            Every day you tracked, laid out at a glance — not just the last 7. A good stretch, or a bad
-            one, is visible across weeks and months, not buried behind a single number.
+            Every habit gets its own month calendar. Done days fill in, and habits with a target fill a ring
+            toward it, so a strong stretch or a bad one is visible at a glance, not buried behind a streak.
           </p>
         </div>
       </div>
 
       <div class="feature-row reverse">
-        <div class="feature-media tilt-media tilt-indigo">
+        <div class="feature-media tilt-media tilt-coral">
           <div class="phone-frame">
-            <img src="/assets/screenshots/graphs.png" alt="Trabit's Graphs screen, plotting a 40-Yard Dash test's improving time over the past month." loading="lazy">
+            <img src="/assets/screenshots/notebook.jpg" alt="Trabit's Notebook: today's Training review and Weekly reflection prompts, today's notes, and a free-write page." width="780" height="1696" loading="lazy">
           </div>
         </div>
         <div class="feature-copy">
-          <h3 class="feature-title">Progress you can actually see</h3>
+          <div class="feature-tag">Notebook</div>
+          <h3 class="feature-title">A notebook for what a checkbox can't hold</h3>
           <p class="feature-body">
-            Plot any habit, test, or synced metric against any other and watch how they move together over
-            a week, a month, or a season.
+            Scheduled prompts like a post-session review, plus free notes whenever you need them. How a lift
+            felt, what the coach said, what to fix next time.
+          </p>
+          <ul class="feature-points">
+            <li>Dictate it straight after a session</li>
+            <li>Lock it behind Face ID</li>
+            <li>Search every past note</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-media tilt-media tilt-indigo">
+          <div class="phone-frame">
+            <img src="/assets/screenshots/test.jpg" alt="Trabit's test page for the 40-Yard Dash: a falling time over the last 30 days, and training and official attempts listed side by side." width="780" height="1696" loading="lazy">
+          </div>
+        </div>
+        <div class="feature-copy">
+          <div class="feature-tag">Tests</div>
+          <h3 class="feature-title">Every test, trending</h3>
+          <p class="feature-body">
+            40-yard splits, max lifts, jump heights, mile times. Log training and official attempts
+            separately, watch the trend line, and Trabit tells you the moment you beat your best.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-media tilt-media">
+          <div class="phone-frame">
+            <img src="/assets/screenshots/social.jpg" alt="Trabit's Social tab: a Consistency Rating of 92.4, ranked 4th of 128 and in the top 3%, above a global leaderboard." width="780" height="1696" loading="lazy">
+          </div>
+        </div>
+        <div class="feature-copy">
+          <div class="feature-tag">Social</div>
+          <h3 class="feature-title">A rating you can't fake</h3>
+          <p class="feature-body">
+            Your Consistency Rating is how much of your own plan you actually hit, worked out on our servers
+            from what you logged. Climb the global board or just your friends'. Everyone sees your name and
+            rating, and nothing else. Your habits stay private.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="widget-stage" role="img" aria-label="Trabit's Home Screen widgets: an overall streak ring at 60% of today done, a Notebook shortcut, and a wide widget with the streak and today's percentage.">
+          <img src="/assets/screenshots/widget_small.png" alt="" loading="lazy">
+          <img src="/assets/screenshots/widget_notes.png" alt="" loading="lazy">
+          <img class="widget-wide" src="/assets/screenshots/widget_medium.png" alt="" loading="lazy">
+        </div>
+        <div class="feature-copy">
+          <div class="feature-tag">Widgets</div>
+          <h3 class="feature-title">Your streak on the Home Screen</h3>
+          <p class="feature-body">
+            See today's progress and your streak without opening the app, or jump straight into today's note.
+            Widgets follow the app's light or dark look.
           </p>
         </div>
       </div>
@@ -156,18 +197,34 @@
       <div class="grid grid-2 feature-support">
         <div class="card">
           <div class="card-icon tint-coral">♥</div>
-          <h3 class="card-title">Apple Health &amp; WHOOP sync</h3>
+          <h3 class="card-title">Apple Health &amp; WHOOP</h3>
           <p class="card-body">
-            Link a habit to steps, recovery, sleep, or strain and let it complete itself from real data —
-            read-only, always. Your wearable does the logging.
+            Link a habit to steps, exercise minutes, recovery, sleep or strain and it completes itself from
+            real data. Read-only, always. Your wearable does the logging.
           </p>
         </div>
         <div class="card">
-          <div class="card-icon tint-accent">◈</div>
-          <h3 class="card-title">Real streaks, real milestones</h3>
+          <div class="card-icon tint-accent">◐</div>
+          <h3 class="card-title">Built around your season</h3>
           <p class="card-body">
-            Streaks are computed from what you actually completed — nothing fudged to keep a number alive.
-            Milestones celebrate the ones that are real.
+            Preseason, in season, offseason or rehab. Habits only come due in the phases you set, so a
+            deload never reads as a slump.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon tint-amber">✦</div>
+          <h3 class="card-title">Set up in a minute</h3>
+          <p class="card-body">
+            Pick starter habits made for your sport, scheduled on the days you said you'll train. Change any
+            of it later.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon tint-indigo">◷</div>
+          <h3 class="card-title">Reminders that know what's left</h3>
+          <p class="card-body">
+            A nudge at the time you pick for each habit, an evening check on what's still open, and a warning
+            before yesterday's catch-up window closes.
           </p>
         </div>
       </div>
@@ -177,6 +234,7 @@
   <section>
     <div class="wrap">
       <div class="cta-band">
+        <img class="cta-mark" src="/assets/mark.png" alt="" width="64" height="64">
         <h2 class="section-title">Train like it counts.</h2>
         <p class="section-body" style="margin: 0 auto 1.8rem; max-width: 40ch;">
           Be the first to know when Trabit launches. Join the waitlist and start tracking your training
@@ -215,12 +273,13 @@
     </div>
     <div class="waitlist-field">
       <label class="waitlist-label" for="waitlist-phone">Phone number</label>
-      <input class="waitlist-input" id="waitlist-phone" type="tel" name="phone" placeholder="+1 555 123 4567" required>
+      <input class="waitlist-input" id="waitlist-phone" type="tel" name="phone" placeholder="+44 7700 900123" required>
     </div>
     <button class="btn btn-primary" type="submit">Notify me</button>
   </form>
   <p class="waitlist-status" data-waitlist-status role="status"></p>
-  <p class="waitlist-success" data-waitlist-success hidden>You're on the list — we'll text and email you when the beta's ready to download.</p>
+  <p class="waitlist-success" data-waitlist-success hidden>You're on the list. We'll text and email you when the beta's ready to download.</p>
+  <p class="waitlist-legal">Used only to tell you about Trabit. See the <a href="/privacy/">Privacy Notice</a>.</p>
 </dialog>
 
 <script src="/waitlist.js"></script>
