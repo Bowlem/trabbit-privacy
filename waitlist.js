@@ -1,5 +1,5 @@
 // Wires the waitlist dialog to the app's Supabase project — same project
-// the Trabbit app itself uses (see supabase/migrations/
+// the Trabit app itself uses (see supabase/migrations/
 // 0026_waitlist_signups.sql in the app repo). The anon key is safe to ship
 // client-side; it can only INSERT into waitlist_signups, per that table's
 // row-level security policy. source_page (which of the 5 pages the visitor
