@@ -1,9 +1,8 @@
 /* Trabit marketing site — shared design system.
    Tokens are the app's own lib/theme.ts values, so a visitor recognizes the
    app in the site: a cool-grey page with warm stone-grey cards and the
-   Trabit blue accent in light mode (the app's default), and the near-black
-   instrument palette in dark mode, which follows the visitor's system
-   setting the way the app's own "System" appearance does.
+   Trabit blue accent. Light only, like the app's default appearance; the
+   near-black palette is kept under data-theme="dark" but nothing sets it.
 
    Shapes follow the app too: one family (Schibsted Grotesk, loaded via a
    Google Fonts <link> in each page's <head>), a floating pill nav like the
@@ -54,36 +53,34 @@
   --max-width: 1120px;
   --font-body: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
 
-  color-scheme: light dark;
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b0d10;
-    --surface: #14171b;
-    --surface-2: #1b1f24;
-    --ink: #f2f3f5;
-    --ink-soft: #8b909a;
-    --ink-faint: #656a73;
-    --accent-text: #20adc5;
-    --accent-ink: #0b0d10;
-    --accent-soft: rgba(32, 173, 197, 0.16);
-    --border: #1e2126;
-    --border-strong: #33373d;
+:root[data-theme='dark'] {
+  --bg: #0b0d10;
+  --surface: #14171b;
+  --surface-2: #1b1f24;
+  --ink: #f2f3f5;
+  --ink-soft: #8b909a;
+  --ink-faint: #656a73;
+  --accent-text: #20adc5;
+  --accent-ink: #0b0d10;
+  --accent-soft: rgba(32, 173, 197, 0.16);
+  --border: #1e2126;
+  --border-strong: #33373d;
 
-    --amber: #e57b1b;
-    --amber-soft: rgba(229, 123, 27, 0.16);
-    --coral: #e0685c;
-    --coral-soft: rgba(224, 104, 92, 0.14);
-    --indigo: #9b85fa;
-    --indigo-soft: rgba(155, 133, 250, 0.16);
+  --amber: #e57b1b;
+  --amber-soft: rgba(229, 123, 27, 0.16);
+  --coral: #e0685c;
+  --coral-soft: rgba(224, 104, 92, 0.14);
+  --indigo: #9b85fa;
+  --indigo-soft: rgba(155, 133, 250, 0.16);
 
-    --night: #14171b;
-    --night-border: #262a30;
+  --night: #14171b;
+  --night-border: #262a30;
 
-    --glow: rgba(32, 173, 197, 0.3);
-    --phone-shadow: 0 2.4rem 4.5rem -2rem rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.04);
-  }
+  --glow: rgba(32, 173, 197, 0.3);
+  --phone-shadow: 0 2.4rem 4.5rem -2rem rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
 * {
